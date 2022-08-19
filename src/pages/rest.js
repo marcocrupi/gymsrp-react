@@ -1,7 +1,7 @@
 import React from "react";
 
 function Rest() {
-  return <div>rest</div>;
+  return <section>rest</section>;
 }
 
 export default Rest;

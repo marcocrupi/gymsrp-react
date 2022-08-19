@@ -11,13 +11,13 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<SharedLayout />}>
+        <Route path="/gymsrp-react" element={<SharedLayout />}>
           <Route index element={<Home />} />
-          <Route path="set" element={<Set />} />
-          <Route path="rest" element={<Rest />} />
-          <Route path="percentage" element={<Percentage />} />
-          <Route path="rm" element={<Rm />} />
-          <Route path="contact" element={<Contact />} />
+          <Route path="/gymsrp-react/set" element={<Set />} />
+          <Route path="/gymsrp-react/rest" element={<Rest />} />
+          <Route path="/gymsrp-react/percentage" element={<Percentage />} />
+          <Route path="/gymsrp-react/rm" element={<Rm />} />
+          <Route path="/gymsrp-react/contact" element={<Contact />} />
         </Route>
       </Routes>
     </BrowserRouter>

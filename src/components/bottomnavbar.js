@@ -1,41 +1,42 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "../CSS/bottomnavbar.css";
 
 function Bottomnavbar() {
   return (
-    <div>
+    <div className="bottomnavbar">
       <NavLink
-        to="/"
+        to="/gymsrp-react"
         className={({ isActive }) => (isActive ? "link active" : "link")}
       >
         Home
       </NavLink>
       <NavLink
-        to="/set"
+        to="/gymsrp-react/set"
         className={({ isActive }) => (isActive ? "link active" : "link")}
       >
         Set
       </NavLink>
       <NavLink
-        to="/rest"
+        to="/gymsrp-react/rest"
         className={({ isActive }) => (isActive ? "link active" : "link")}
       >
         Rest
       </NavLink>
       <NavLink
-        to="/percentage"
+        to="/gymsrp-react/percentage"
         className={({ isActive }) => (isActive ? "link active" : "link")}
       >
         Percentage
       </NavLink>
       <NavLink
-        to="/rm"
+        to="/gymsrp-react/rm"
         className={({ isActive }) => (isActive ? "link active" : "link")}
       >
         1RM
       </NavLink>
       <NavLink
-        to="/contact"
+        to="/gymsrp-react/contact"
         className={({ isActive }) => (isActive ? "link active" : "link")}
       >
         Contact

@@ -1,45 +1,33 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "../CSS/header.css";
 
 function Header() {
   return (
     <nav>
-      <NavLink
-        to="/"
-        className={({ isActive }) => (isActive ? "link active" : "link")}
-      >
-        Home
-      </NavLink>
-      <NavLink
-        to="/set"
-        className={({ isActive }) => (isActive ? "link active" : "link")}
-      >
-        Set
-      </NavLink>
-      <NavLink
-        to="/rest"
-        className={({ isActive }) => (isActive ? "link active" : "link")}
-      >
-        Rest
-      </NavLink>
-      <NavLink
-        to="/percentage"
-        className={({ isActive }) => (isActive ? "link active" : "link")}
-      >
-        Percentage
-      </NavLink>
-      <NavLink
-        to="/rm"
-        className={({ isActive }) => (isActive ? "link active" : "link")}
-      >
-        1RM
-      </NavLink>
-      <NavLink
-        to="/contact"
-        className={({ isActive }) => (isActive ? "link active" : "link")}
-      >
-        Contact
-      </NavLink>
+      <div className="header__logo">
+        <span>GYM SRP2</span>
+      </div>
+      <div className="header__links">
+        <NavLink to="/gymsrp-react" className="header__link">
+          Home
+        </NavLink>
+        <NavLink to="/gymsrp-react/set" className="header__link">
+          Set
+        </NavLink>
+        <NavLink to="/gymsrp-react/rest" className="header__link">
+          Rest
+        </NavLink>
+        <NavLink to="/gymsrp-react/percentage" className="header__link">
+          Percentage
+        </NavLink>
+        <NavLink to="/gymsrp-react/rm" className="header__link">
+          1RM
+        </NavLink>
+        <NavLink to="/gymsrp-react/contact" className="header__link">
+          Contact
+        </NavLink>
+      </div>
     </nav>
   );
 }

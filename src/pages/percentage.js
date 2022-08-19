@@ -1,7 +1,7 @@
 import React from "react";
 
 function Percentage() {
-  return <div>percentage</div>;
+  return <section>percentage</section>;
 }
 
 export default Percentage;

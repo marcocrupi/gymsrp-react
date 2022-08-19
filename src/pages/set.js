@@ -1,7 +1,7 @@
 import React from "react";
 
 function Set() {
-  return <div>set</div>;
+  return <section>set</section>;
 }
 
 export default Set;

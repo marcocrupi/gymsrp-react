@@ -1,0 +1,9 @@
+.bottomnavbar {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .bottomnavbar {
+    display: block;
+  }
+}

@@ -1,0 +1,18 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: orange;
+}
+
+.header__logo span {
+    margin: 0 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.header__link {
+    font-size: 1.2rem;
+    margin: 0 1rem;
+}

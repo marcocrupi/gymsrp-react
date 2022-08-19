@@ -1,7 +1,7 @@
 import React from "react";
 
 function Rm() {
-  return <div>rm</div>;
+  return <section>rm</section>;
 }
 
 export default Rm;
