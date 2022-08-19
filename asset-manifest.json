@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/gymsrp-react/static/css/main.d900f367.css",
-    "main.js": "/gymsrp-react/static/js/main.55772a74.js",
+    "main.css": "/gymsrp-react/static/css/main.953c40c1.css",
+    "main.js": "/gymsrp-react/static/js/main.d3626749.js",
     "static/js/787.6861076a.chunk.js": "/gymsrp-react/static/js/787.6861076a.chunk.js",
     "index.html": "/gymsrp-react/index.html",
-    "main.d900f367.css.map": "/gymsrp-react/static/css/main.d900f367.css.map",
-    "main.55772a74.js.map": "/gymsrp-react/static/js/main.55772a74.js.map",
+    "main.953c40c1.css.map": "/gymsrp-react/static/css/main.953c40c1.css.map",
+    "main.d3626749.js.map": "/gymsrp-react/static/js/main.d3626749.js.map",
     "787.6861076a.chunk.js.map": "/gymsrp-react/static/js/787.6861076a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d900f367.css",
-    "static/js/main.55772a74.js"
+    "static/css/main.953c40c1.css",
+    "static/js/main.d3626749.js"
   ]
 }
