@@ -1,0 +1,19 @@
+.set_counter {
+    margin: 1rem 0;
+}
+
+.set_buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.set__plus,.set__less {
+    height: 2rem;
+    width: 2rem;
+}
+.set__reset {
+    margin: 0 1rem;
+    height: 2rem;
+    width: 4rem;
+}
