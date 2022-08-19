@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/gymsrp-react/static/css/main.0c06183f.css",
+    "main.js": "/gymsrp-react/static/js/main.215ee6a5.js",
+    "static/js/787.6861076a.chunk.js": "/gymsrp-react/static/js/787.6861076a.chunk.js",
+    "index.html": "/gymsrp-react/index.html",
+    "main.0c06183f.css.map": "/gymsrp-react/static/css/main.0c06183f.css.map",
+    "main.215ee6a5.js.map": "/gymsrp-react/static/js/main.215ee6a5.js.map",
+    "787.6861076a.chunk.js.map": "/gymsrp-react/static/js/787.6861076a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0c06183f.css",
+    "static/js/main.215ee6a5.js"
+  ]
+}
