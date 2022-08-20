@@ -41,17 +41,17 @@ function Percentage() {
       return calc_total(newValuesElse);
     }
 
-    let result1 = percentage * of;
-    let result2 = result1 / 100;
-    const newTotal = result2.toFixed(2);
+    let op1 = percentage * of;
+    let op2 = op1 / 100;
+    const newTotal = op2.toFixed(2);
     set_total(newTotal);
   };
 
-   const prevent = (evt) => {
-     if (evt.key === "e") {
-       evt.preventDefault();
-     }
-   };
+  const prevent = (evt) => {
+    if (evt.key === "e") {
+      evt.preventDefault();
+    }
+  };
 
   return (
     <section>
