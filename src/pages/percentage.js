@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../CSS/percentage.css";
 
 function Percentage() {
-  const [values, setValues] = useState({
+  const [percentvalues, setPercentvalues] = useState({
     percentage: "",
     of: "",
   });
@@ -11,10 +11,10 @@ function Percentage() {
     let name = e.target.name;
     let value = e.target.value;
     const newValues = {
-      ...values,
+      ...percentvalues,
       [name]: value,
     };
-    setValues(newValues);
+    setPercentvalues(newValues);
     calc_total(newValues);
   };
 
@@ -25,19 +25,19 @@ function Percentage() {
 
     if (percentage > 200) {
       const newValuesIf = {
-        ...values,
+        ...percentvalues,
         percentage: 200,
       };
       console.log(newValuesIf);
-      setValues(newValuesIf);
+      setPercentvalues(newValuesIf);
       return calc_total(newValuesIf);
     } else if (of > 1000) {
       const newValuesElse = {
-        ...values,
+        ...percentvalues,
         of: 1000,
       };
       console.log(newValuesElse);
-      setValues(newValuesElse);
+      setPercentvalues(newValuesElse);
       return calc_total(newValuesElse);
     }
 
@@ -69,7 +69,7 @@ function Percentage() {
           step="1"
           min="0"
           max="200"
-          value={values.percentage}
+          value={percentvalues.percentage}
           onKeyDown={prevent}
           pattern="[0-9]+"
         />
@@ -85,7 +85,7 @@ function Percentage() {
           max="1000"
           type="number"
           onKeyDown={prevent}
-          value={values.of}
+          value={percentvalues.of}
           onChange={value_handler}
           placeholder="0"
           pattern="[0-9]+"

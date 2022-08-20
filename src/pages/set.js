@@ -5,11 +5,11 @@ function Set() {
   const [counter, setCounter] = useState(0);
 
    useEffect(() => {
-     setCounter(JSON.parse(window.localStorage.getItem("count")));
+     setCounter(JSON.parse(window.localStorage.getItem("counter")));
    }, []);
 
    useEffect(() => {
-     window.localStorage.setItem("count", counter);
+     window.localStorage.setItem("counter", counter);
    }, [counter]);
 
   const add = () => {

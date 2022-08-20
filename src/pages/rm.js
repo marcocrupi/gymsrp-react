@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../CSS/rm.css";
 
 function Rm() {
-  const [values, setValues] = useState({
+  const [rmvalues, setRmValues] = useState({
     weight: "",
     reps: "",
   });
@@ -11,10 +11,10 @@ function Rm() {
     let name = e.target.name;
     let value = e.target.value;
     const newValues = {
-      ...values,
+      ...rmvalues,
       [name]: value,
     };
-    setValues(newValues);
+    setRmValues(newValues);
     calc_total(newValues);
   };
 
@@ -25,19 +25,19 @@ function Rm() {
 
     if (weight > 650) {
       const newValuesIf = {
-        ...values,
+        ...rmvalues,
         weight: 650,
       };
       console.log(newValuesIf);
-      setValues(newValuesIf);
+      setRmValues(newValuesIf);
       return calc_total(newValuesIf);
     } else if (reps > 12) {
       const newValuesElse = {
-        ...values,
+        ...rmvalues,
         reps: 12,
       };
       console.log(newValuesElse);
-      setValues(newValuesElse);
+      setRmValues(newValuesElse);
       return calc_total(newValuesElse);
     }
 
@@ -70,7 +70,7 @@ function Rm() {
           max="1000"
           type="number"
           onKeyDown={prevent}
-          value={values.reps}
+          value={rmvalues.reps}
           onChange={value_handler}
           placeholder="0"
           pattern="[0-9]+"
@@ -87,7 +87,7 @@ function Rm() {
           step="1"
           min="0"
           max="200"
-          value={values.weight}
+          value={rmvalues.weight}
           onKeyDown={prevent}
           pattern="[0-9]+"
         />
