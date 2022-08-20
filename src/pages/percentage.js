@@ -9,7 +9,7 @@ function Percentage() {
 
   const value_handler = (e) => {
     let name = e.target.name;
-    let value = +e.target.value;
+    let value = e.target.value;
     const newValues = {
       ...values,
       [name]: value,
@@ -47,13 +47,11 @@ function Percentage() {
     set_total(newTotal);
   };
 
-  const prevent = (evt) => {
-    if (evt.key === ".") {
-      evt.preventDefault();
-    } else if (evt.key === "e") {
-      evt.preventDefault();
-    }
-  };
+   const prevent = (evt) => {
+     if (evt.key === "e") {
+       evt.preventDefault();
+     }
+   };
 
   return (
     <section>
