@@ -25,7 +25,7 @@ function Set() {
 
   return (
     <section>
-      <div>
+      <div className="set__title">
         <span>SET</span>
       </div>
       <div className="set_counter">{counter}</div>

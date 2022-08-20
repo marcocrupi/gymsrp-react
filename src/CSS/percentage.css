@@ -1,0 +1,11 @@
+.percentage__inputPercentage,.percentage__inputOf {
+    border: 1px solid black;
+    margin: 0.5rem 0;
+}
+
+.percentage__inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
