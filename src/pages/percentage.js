@@ -1,31 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../CSS/percentage.css";
-import { createBrowserHistory } from "history";
-import qs from "qs";
 
 function Percentage() {
   const [values, setValues] = useState({
     percentage: "",
     of: "",
   });
-
-
-
-   const history = createBrowserHistory();
-
-   useEffect(() => {
-     const filterParams = history.location.search.substr(1);
-     const filtersFromParams = qs.parse(filterParams);
-     if (filtersFromParams.values) {
-       setValues(Number(filtersFromParams.values));
-     }
-   }, []);
-
-   useEffect(() => {
-     history.push(`?count=${values}`);
-   }, [values]);
-
-
 
   const value_handler = (e) => {
     let name = e.target.name;
@@ -67,32 +47,49 @@ function Percentage() {
     set_total(newTotal);
   };
 
+  const prevent = (evt) => {
+    if (evt.key === ".") {
+      evt.preventDefault();
+    } else if (evt.key === "e") {
+      evt.preventDefault();
+    }
+  };
+
   return (
     <section>
       <div className="percentage__title">
         <span>PERCENTAGE CALCULATOR</span>
       </div>
-      <div className="percentage__inputs">
+      <div class="input-group">
+        <span class="input-group-text">Percentage:</span>
         <input
+          className="form-control"
           name="percentage"
-          value={values.percentage}
           type="number"
           onChange={value_handler}
-          placeholder="%"
-          step="0.1"
+          placeholder="0"
+          step="1"
           min="0"
           max="200"
+          value={values.percentage}
+          onKeyDown={prevent}
           pattern="[0-9]+"
         />
+        <span class="input-group-text">%</span>
+      </div>
+      <div class="input-group">
+        <span class="input-group-text">Of:</span>
         <input
+          className="form-control"
           name="of"
-          value={values.of}
-          step="0.1"
+          step="1"
           min="0"
           max="1000"
           type="number"
+          onKeyDown={prevent}
+          value={values.of}
           onChange={value_handler}
-          placeholder="of"
+          placeholder="0"
           pattern="[0-9]+"
         />
       </div>
