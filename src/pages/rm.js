@@ -60,8 +60,8 @@ function Rm() {
       <div className="weight__title">
         <span>1RM CALCULATOR</span>
       </div>
-      <div class="input-group">
-        <span class="input-group-text">Reps:</span>
+      <div className="input-group">
+        <span className="input-group-text">Reps:</span>
         <input
           className="form-control"
           name="reps"
@@ -76,8 +76,8 @@ function Rm() {
           pattern="[0-9]+"
         />
       </div>
-      <div class="input-group">
-        <span class="input-group-text">Weight:</span>
+      <div className="input-group">
+        <span className="input-group-text">Weight:</span>
         <input
           className="form-control"
           name="weight"

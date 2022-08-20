@@ -58,8 +58,8 @@ function Percentage() {
       <div className="percentage__title">
         <span>PERCENTAGE CALCULATOR</span>
       </div>
-      <div class="input-group">
-        <span class="input-group-text">Percentage:</span>
+      <div className="input-group">
+        <span className="input-group-text">Percentage:</span>
         <input
           className="form-control"
           name="percentage"
@@ -73,10 +73,10 @@ function Percentage() {
           onKeyDown={prevent}
           pattern="[0-9]+"
         />
-        <span class="input-group-text">%</span>
+        <span className="input-group-text">%</span>
       </div>
-      <div class="input-group">
-        <span class="input-group-text">Of:</span>
+      <div className="input-group">
+        <span className="input-group-text">Of:</span>
         <input
           className="form-control"
           name="of"
