@@ -25,6 +25,7 @@ function Timer() {
 
   useEffect(() => {
     function resetMode() {
+      settingsInfo.setWorkMinutes(0);
       settingsInfo.setWorkSeconds(0);
       setSecondsLeft(0);
       isPausedRef.current = true;
