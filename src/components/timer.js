@@ -25,11 +25,14 @@ function Timer() {
 
   useEffect(() => {
     function resetMode() {
-      const nextSeconds = settingsInfo.workMinutes * 60;
-      setSecondsLeft(nextSeconds);
+      settingsInfo.setWorkSeconds(0);
+      setSecondsLeft(0);
+      isPausedRef.current = true;
+      setIsPaused(true);
     }
 
-    secondsLeftRef.current = settingsInfo.workMinutes * 60;
+    secondsLeftRef.current =
+      settingsInfo.workMinutes * 60 + settingsInfo.workSeconds;
     setSecondsLeft(secondsLeftRef.current);
 
     const interval = setInterval(() => {
@@ -37,6 +40,7 @@ function Timer() {
         return;
       }
       if (secondsLeftRef.current === 0) {
+        
         return resetMode();
       }
 

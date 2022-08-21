@@ -7,8 +7,9 @@ import SettingsContext from "../components/settingscontext";
 function Rest() {
 
    const [showSettings, setShowSettings] = useState(false);
-   const [workMinutes, setWorkMinutes] = useState(45);
-   const [breakMinutes, setBreakMinutes] = useState(15);
+   const [workMinutes, setWorkMinutes] = useState(0);
+   const [workSeconds, setWorkSeconds] = useState(0);
+  
 
   return (
     <div className="rest__container">
@@ -18,9 +19,9 @@ function Rest() {
             showSettings,
             setShowSettings,
             workMinutes,
-            breakMinutes,
             setWorkMinutes,
-            setBreakMinutes,
+            workSeconds,
+            setWorkSeconds
           }}
         >
           <Timer />

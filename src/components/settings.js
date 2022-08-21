@@ -9,7 +9,7 @@ function Settings() {
   return (
     <div style={{ textAlign: "left" }}>
       <label className="settings__label">
-        work: {settingsInfo.workMinutes}:00
+        minutes: {settingsInfo.workMinutes}
       </label>
       <ReactSlider
         className={"slider"}
@@ -17,10 +17,22 @@ function Settings() {
         trackClassName={"track"}
         value={settingsInfo.workMinutes}
         onChange={(newValue) => settingsInfo.setWorkMinutes(newValue)}
-        min={1}
-        max={120}
+        min={0}
+        max={60}
       />
-      
+
+      <label className="settings__label">
+        seconds: {settingsInfo.workSeconds}
+      </label>
+      <ReactSlider
+        className={"slider green"}
+        thumbClassName={"thumb"}
+        trackClassName={"track"}
+        value={settingsInfo.workSeconds}
+        onChange={(newValue) => settingsInfo.setWorkSeconds(newValue)}
+        min={0}
+        max={60}
+      />
     </div>
   );
 }
