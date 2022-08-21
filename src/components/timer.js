@@ -8,7 +8,8 @@ import SettingsContext from "./settingscontext";
 
 const red = "#f54e4e";
 
-function Timer() {
+function Timer(){
+  
   const settingsInfo = useContext(SettingsContext);
 
   const [isPaused, setIsPaused] = useState(true);
@@ -41,7 +42,6 @@ function Timer() {
         return;
       }
       if (secondsLeftRef.current === 0) {
-        
         return resetMode();
       }
 
@@ -51,7 +51,7 @@ function Timer() {
     return () => clearInterval(interval);
   }, [settingsInfo]);
 
-  const totalSeconds = settingsInfo.workMinutes * 60;
+  const totalSeconds = settingsInfo.workMinutes * 60 + settingsInfo.workSeconds;
   const percentage = Math.round((secondsLeft / totalSeconds) * 100);
 
   const minutes = Math.floor(secondsLeft / 60);
