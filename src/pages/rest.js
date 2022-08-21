@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Timer from "../components/timer";
-import Settings from "../components/setting";
+import Settings from "../components/settings";
 import "../CSS/rest.css"
+import SettingsContext from "../components/settingscontext";
 
 function Rest() {
 
@@ -12,8 +13,19 @@ function Rest() {
   return (
     <div className="rest__container">
       <div className="rest__components">
-        <Settings />
-        <Timer />
+        <SettingsContext.Provider
+          value={{
+            showSettings,
+            setShowSettings,
+            workMinutes,
+            breakMinutes,
+            setWorkMinutes,
+            setBreakMinutes,
+          }}
+        >
+          <Timer />
+          <Settings />
+        </SettingsContext.Provider>
       </div>
     </div>
   );
