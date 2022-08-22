@@ -8,8 +8,7 @@ import SettingsContext from "./settingscontext";
 
 const red = "#f54e4e";
 
-function Timer(){
-  
+function Timer() {
   const settingsInfo = useContext(SettingsContext);
 
   const [isPaused, setIsPaused] = useState(true);
@@ -20,6 +19,7 @@ function Timer(){
   const isPausedRef = useRef(isPaused);
 
   function tick() {
+    console.log("tick", isPausedRef.current);
     secondsLeftRef.current--;
     setSecondsLeft(secondsLeftRef.current);
   }
@@ -39,7 +39,13 @@ function Timer(){
 
     const interval = setInterval(() => {
       if (isPausedRef.current) {
-        return;
+        console.log("stop", isPausedRef.current);
+        if (secondsLeftRef.current === 0) {
+          console.log("clear interval");
+          clearInterval(interval);
+          return;
+        }
+         return;
       }
       if (secondsLeftRef.current === 0) {
         return resetMode();
@@ -58,6 +64,18 @@ function Timer(){
   let seconds = secondsLeft % 60;
   if (seconds < 10) seconds = "0" + seconds;
 
+  function pauseButton() {
+    setIsPaused(true);
+    isPausedRef.current = true;
+    console.log("pause button");
+  }
+
+  function playButton() {
+    setIsPaused(false);
+    isPausedRef.current = false;
+    console.log("play button");
+  }
+
   return (
     <div>
       <CircularProgressbar
@@ -70,21 +88,9 @@ function Timer(){
         })}
       />
       <div style={{ marginTop: "20px" }}>
-        {isPaused ? (
-          <PlayButton
-            onClick={() => {
-              setIsPaused(false);
-              isPausedRef.current = false;
-            }}
-          />
-        ) : (
-          <PauseButton
-            onClick={() => {
-              setIsPaused(true);
-              isPausedRef.current = true;
-            }}
-          />
-        )}
+        <PlayButton onClick={playButton} />
+
+        <PauseButton onClick={pauseButton} />
       </div>
     </div>
   );
