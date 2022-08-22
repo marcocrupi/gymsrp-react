@@ -3,8 +3,8 @@ import "../CSS/rm.css";
 
 function Rm() {
   const [rmvalues, setRmValues] = useState({
-    weight: "",
-    reps: "",
+    weight: `${parseFloat(localStorage.getItem("Weight"))}`,
+    reps: `${parseFloat(localStorage.getItem("Reps"))}`,
   });
 
   const value_handler = (e) => {
@@ -18,7 +18,9 @@ function Rm() {
     calc_total(newValues);
   };
 
-  const [total, set_total] = useState(0);
+  const [rmTotal, setRmTotal] = useState(
+    parseFloat(localStorage.getItem("RmTotal"))
+  );
 
   const calc_total = (newValues) => {
     const { weight, reps } = newValues;
@@ -46,7 +48,7 @@ function Rm() {
     let op3 = op2/100;
     let op4 = weight / op3;
     const newTotal = op4.toFixed(1);
-    set_total(newTotal);
+    setRmTotal(newTotal);
   };
 
   const prevent = (evt) => {
@@ -54,6 +56,12 @@ function Rm() {
       evt.preventDefault();
     }
   };
+
+   localStorage.setItem("Weight", rmvalues.weight);
+   localStorage.setItem("Reps", rmvalues.reps);
+   localStorage.setItem("RmTotal", rmTotal);
+
+   
 
   return (
     <section>
@@ -70,7 +78,7 @@ function Rm() {
           max="1000"
           type="number"
           onKeyDown={prevent}
-          value={rmvalues.reps}
+          value={parseFloat(localStorage.getItem("Reps"))}
           onChange={value_handler}
           placeholder="0"
           pattern="[0-9]+"
@@ -87,13 +95,15 @@ function Rm() {
           step="1"
           min="0"
           max="200"
-          value={rmvalues.weight}
+          value={parseFloat(localStorage.getItem("Weight"))}
           onKeyDown={prevent}
           pattern="[0-9]+"
         />
       </div>
 
-      <h2>{total}</h2>
+      <h2>
+        {isNaN(rmTotal) ? 0 : parseFloat(localStorage.getItem("RmTotal"))}
+      </h2>
     </section>
   );
 }
