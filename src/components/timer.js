@@ -46,7 +46,7 @@ function Timer() {
           clearInterval(interval);
           return;
         }
-         return;
+        return;
       }
       if (secondsLeftRef.current === 0) {
         return resetMode();
@@ -58,12 +58,9 @@ function Timer() {
     return () => clearInterval(interval);
   }, [settingsInfo]);
 
-    
-
   const totalSeconds = settingsInfo.workMinutes * 60 + settingsInfo.workSeconds;
   const percentage = Math.round((secondsLeft / totalSeconds) * 100);
-  console.log( "percentage", percentage)
-
+  
   const minutes = Math.floor(secondsLeft / 60);
   let seconds = secondsLeft % 60;
   if (seconds < 10) seconds = "0" + seconds;
@@ -80,15 +77,14 @@ function Timer() {
     console.log("play button");
   }
 
-
-function resetButton() {
-  settingsInfo.setWorkMinutes(0);
-  settingsInfo.setWorkSeconds(0);
-  setSecondsLeft(0);
-  isPausedRef.current = true;
-  secondsLeftRef.current = 0;
-  setIsPaused(true);
-}
+  function resetButton() {
+    settingsInfo.setWorkMinutes(0);
+    settingsInfo.setWorkSeconds(0);
+    setSecondsLeft(0);
+    isPausedRef.current = true;
+    secondsLeftRef.current = 0;
+    setIsPaused(true);
+  }
 
   return (
     <div>
@@ -103,9 +99,7 @@ function resetButton() {
       />
       <div style={{ marginTop: "20px" }}>
         <PlayButton onClick={playButton} />
-
         <PauseButton onClick={pauseButton} />
-
         <ResetButton onClick={resetButton} />
       </div>
     </div>
