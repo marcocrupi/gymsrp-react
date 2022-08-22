@@ -5,6 +5,7 @@ import "react-circular-progressbar/dist/styles.css";
 import PlayButton from "./playbutton";
 import PauseButton from "./pausebutton";
 import SettingsContext from "./settingscontext";
+import ResetButton from "./resetbutton";
 
 const red = "#f54e4e";
 
@@ -57,8 +58,11 @@ function Timer() {
     return () => clearInterval(interval);
   }, [settingsInfo]);
 
+    
+
   const totalSeconds = settingsInfo.workMinutes * 60 + settingsInfo.workSeconds;
   const percentage = Math.round((secondsLeft / totalSeconds) * 100);
+  console.log( "percentage", percentage)
 
   const minutes = Math.floor(secondsLeft / 60);
   let seconds = secondsLeft % 60;
@@ -76,10 +80,20 @@ function Timer() {
     console.log("play button");
   }
 
+
+function resetButton() {
+  settingsInfo.setWorkMinutes(0);
+  settingsInfo.setWorkSeconds(0);
+  setSecondsLeft(0);
+  isPausedRef.current = true;
+  secondsLeftRef.current = 0;
+  setIsPaused(true);
+}
+
   return (
     <div>
       <CircularProgressbar
-        value={percentage}
+        value={secondsLeftRef.current === 0 ? 0 : percentage}
         text={minutes + ":" + seconds}
         styles={buildStyles({
           textColor: "#fff",
@@ -91,6 +105,8 @@ function Timer() {
         <PlayButton onClick={playButton} />
 
         <PauseButton onClick={pauseButton} />
+
+        <ResetButton onClick={resetButton} />
       </div>
     </div>
   );
