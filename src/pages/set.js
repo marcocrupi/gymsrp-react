@@ -2,22 +2,21 @@ import React, { useState, useEffect } from "react";
 import "../CSS/set.css";
 
 function Set() {
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(
+    parseInt(localStorage.getItem("counter"))
+  );
 
-   useEffect(() => {
-     setCounter(JSON.parse(window.localStorage.getItem("counter")));
-   }, []);
+  localStorage.setItem("counter", counter)
 
-   useEffect(() => {
-     window.localStorage.setItem("counter", counter);
-   }, [counter]);
+  
+
 
   const add = () => {
-    setCounter(counter + 1);
+    setCounter(parseInt(localStorage.getItem("counter")) + 1);
   };
 
   const less = () => {
-    setCounter(counter - 1);
+    setCounter(parseInt(localStorage.getItem("counter")) - 1);
     if (counter <= 0) {
       setCounter(0);
     }
@@ -28,7 +27,9 @@ function Set() {
       <div className="set__title">
         <span>SET</span>
       </div>
-      <div className="set_counter">{counter}</div>
+      <div className="set_counter">
+        {isNaN(counter) ? setCounter(0) : parseFloat(localStorage.getItem("counter"))}
+      </div>
       <div className="set_buttons">
         <button onClick={add} className="set__plus">
           +

@@ -3,8 +3,8 @@ import "../CSS/percentage.css";
 
 function Percentage() {
   const [percentvalues, setPercentvalues] = useState({
-    percentage: "",
-    of: "",
+    percentage: `${parseFloat(localStorage.getItem("Percentage"))}`,
+    of: `${parseFloat(localStorage.getItem("Of"))}`,
   });
 
   const value_handler = (e) => {
@@ -18,7 +18,9 @@ function Percentage() {
     calc_total(newValues);
   };
 
-  const [total, set_total] = useState(0);
+  const [total, set_total] = useState(
+    parseFloat(localStorage.getItem("Total"))
+  );
 
   const calc_total = (newValues) => {
     const { percentage, of } = newValues;
@@ -53,6 +55,10 @@ function Percentage() {
     }
   };
 
+  localStorage.setItem("Percentage", percentvalues.percentage);
+  localStorage.setItem("Of", percentvalues.of);
+  localStorage.setItem("Total", total);
+
   return (
     <section>
       <div className="percentage__title">
@@ -69,7 +75,7 @@ function Percentage() {
           step="1"
           min="0"
           max="200"
-          value={percentvalues.percentage}
+          value={parseFloat(localStorage.getItem("Percentage"))}
           onKeyDown={prevent}
           pattern="[0-9]+"
         />
@@ -85,13 +91,13 @@ function Percentage() {
           max="1000"
           type="number"
           onKeyDown={prevent}
-          value={percentvalues.of}
+          value={parseFloat(localStorage.getItem("Of"))}
           onChange={value_handler}
           placeholder="0"
           pattern="[0-9]+"
         />
       </div>
-      <h2>{total}</h2>
+      <h2>{isNaN(total) ? 0 : parseFloat(localStorage.getItem("Total"))}</h2>
     </section>
   );
 }
