@@ -1,16 +1,24 @@
 import React, { useState } from "react";
 import Timer from "../components/timer";
 import Settings from "../components/settings";
-import "../CSS/rest.css"
+import "../CSS/rest.css";
 import SettingsContext from "../components/settingscontext";
 
 function Rest() {
+  const [showSettings, setShowSettings] = useState(false);
+  const [workMinutes, setWorkMinutes] = useState(
+    isNaN(parseInt(localStorage.getItem("SettingsInfoWorkMinutes")))
+      ? 0
+      : parseInt(localStorage.getItem("SettingsInfoWorkMinutes"))
+  );
+  const [workSeconds, setWorkSeconds] = useState(
+    isNaN(parseInt(localStorage.getItem("SettingsInfoWorkSeconds")))
+      ? 0
+      : parseInt(localStorage.getItem("SettingsInfoWorkSeconds"))
+  );
 
-   const [showSettings, setShowSettings] = useState(false);
-   const [workMinutes, setWorkMinutes] = useState(0);
-   const [workSeconds, setWorkSeconds] = useState(0);
+  localStorage.setItem("ShowSettings", showSettings);
   
-
   return (
     <div className="rest__container">
       <div className="rest__components">
@@ -21,7 +29,7 @@ function Rest() {
             workMinutes,
             setWorkMinutes,
             workSeconds,
-            setWorkSeconds
+            setWorkSeconds,
           }}
         >
           <Timer />

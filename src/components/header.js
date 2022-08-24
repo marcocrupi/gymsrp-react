@@ -10,13 +10,10 @@ function Header() {
       </div>
       <div className="header__links">
         <NavLink to="/gymsrp-react" className="header__link">
-          Home
+          Rest
         </NavLink>
         <NavLink to="/gymsrp-react/set" className="header__link">
           Set
-        </NavLink>
-        <NavLink to="/gymsrp-react/rest" className="header__link">
-          Rest
         </NavLink>
         <NavLink to="/gymsrp-react/percentage" className="header__link">
           Percentage

@@ -12,9 +12,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/gymsrp-react" element={<SharedLayout />}>
-          <Route index element={<Home />} />
+          <Route index element={<Rest />} />
           <Route path="/gymsrp-react/set" element={<Set />} />
-          <Route path="/gymsrp-react/rest" element={<Rest />} />
           <Route path="/gymsrp-react/percentage" element={<Percentage />} />
           <Route path="/gymsrp-react/rm" element={<Rm />} />
           <Route path="/gymsrp-react/contact" element={<Contact />} />

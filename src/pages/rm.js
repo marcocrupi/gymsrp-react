@@ -45,7 +45,7 @@ function Rm() {
 
     let op1 = reps * 2.5;
     let op2 = 100 - op1;
-    let op3 = op2/100;
+    let op3 = op2 / 100;
     let op4 = weight / op3;
     const newTotal = op4.toFixed(1);
     setRmTotal(newTotal);
@@ -57,11 +57,9 @@ function Rm() {
     }
   };
 
-   localStorage.setItem("Weight", rmvalues.weight);
-   localStorage.setItem("Reps", rmvalues.reps);
-   localStorage.setItem("RmTotal", rmTotal);
-
-   
+  localStorage.setItem("Weight", rmvalues.weight);
+  localStorage.setItem("Reps", rmvalues.reps);
+  localStorage.setItem("RmTotal", rmTotal);
 
   return (
     <section>
