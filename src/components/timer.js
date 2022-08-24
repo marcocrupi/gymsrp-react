@@ -9,8 +9,6 @@ import ResetButton from "./resetbutton";
 
 const red = "#f54e4e";
 
-// LOCAL STORAGE VARIABLES - ENDS
-
 function Timer() {
   const settingsInfo = useContext(SettingsContext);
 
@@ -49,7 +47,6 @@ function Timer() {
     console.log("tick", isPausedRef.current);
     secondsLeftRef.current--;
     setSecondsLeft(secondsLeftRef.current);
-    // isNaN(secondLeftStorage) ? secondsLeftRef.current-- : secondLeftStorage;
   }
 
   useEffect(() => {
@@ -94,7 +91,16 @@ function Timer() {
   }, [settingsInfo]);
 
   const totalSeconds = settingsInfo.workMinutes * 60 + settingsInfo.workSeconds;
-  const percentage = Math.round((secondsLeft / totalSeconds) * 100);
+  const percentage = Math.round(
+    (secondsLeft / totalSeconds) * 100
+  );
+
+  // LOCAL STORAGE - START
+
+  localStorage.setItem("percentage", percentage);
+  localStorage.setItem("totalSeconds", totalSeconds);
+
+  // LOCAL STORAGE - END
 
   const minutes = Math.floor(secondsLeft / 60);
   let seconds = secondsLeft % 60;
@@ -124,7 +130,11 @@ function Timer() {
   return (
     <div>
       <CircularProgressbar
-        value={secondsLeftRef.current === 0 ? 0 : percentage}
+        value={
+          secondsLeftRef.current === 0
+            ? 0
+            : percentage
+        }
         text={minutes + ":" + seconds}
         styles={buildStyles({
           textColor: "#fff",
