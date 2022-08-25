@@ -10,6 +10,7 @@
 
 html,
 body {
+  overflow-x: hidden;
   height: 100%;
 }
 
@@ -40,3 +41,28 @@ body {
   font-weight: bold;
   letter-spacing: 2px;
 }
+
+/* Custom scrollbar start */
+
+  /* width */
+  ::-webkit-scrollbar {
+    /* width: 10px; */
+    display: none;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f0c32d;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  /* Custom scrollbar end */

@@ -1,9 +1,11 @@
 footer {
   height: 60px;
   background-color: #f0c32d;
+  text-align: center;
 }
 
 .footer_element {
+  padding: 0 1rem;
   font-weight: bold;
   display: flex;
   height: 60px;

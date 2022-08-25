@@ -2,9 +2,10 @@ nav {
   height: 60px;
   background-color: #f0c32d;
   width: 100%;
+  z-index: 1000;
 }
 
-#navbar {
+#navbar,#toggle {
   display: none;
 }
 
@@ -37,12 +38,21 @@ nav {
 }
 
 @media screen and (max-width: 850px) {
+
+  nav {
+    position: fixed;
+  }
+
   .header__navbar {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header__links {
     display: none;
   }
 
   #toggle {
-    position: absolute;
     top: 0px;
     right: 0px;
     width: 60px;
@@ -83,19 +93,20 @@ nav {
   }
 
   #toggle.active {
-   background: black;
+    background: black;
   }
 
- #navbar {
+  #navbar {
     position: fixed;
-    bottom: -100%;
+    bottom: 100%;
     right: 0;
     width: 100%;
     transition: 0.5s;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #fff;
+    background: #f0c32d;
+    z-index: 1000;
   }
 
   #navbar.active {
@@ -109,4 +120,10 @@ nav {
     justify-content: center;
     align-items: center;
   }
+
+  #navbar ul li {
+  list-style: none;
+  margin: 2rem 0;
+}
+
 }

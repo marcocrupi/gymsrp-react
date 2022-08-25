@@ -2,10 +2,17 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "../CSS/header.css";
 
-const toggle = document.getElementById("toggle");
-const navbar = document.getElementById("navbar");
-
 function Header() {
+  document.onclick = function (e) {
+    if (e.target.id !== "toggle" && e.target.id !== "navbar") {
+      toggle.classList.remove("active");
+      navbar.classList.remove("active");
+    }
+  };
+
+  const toggle = document.getElementById("toggle");
+  const navbar = document.getElementById("navbar");
+
   const activeMenu = () => {
     toggle.classList.toggle("active");
     navbar.classList.toggle("active");
@@ -13,26 +20,32 @@ function Header() {
 
   return (
     <>
-      <div onClick={activeMenu} id="toggle"></div>
       <div id="navbar">
         <ul>
           <li>
-            <a href="#home">Home</a>
+            <NavLink to="/gymsrp-react" className="header__link">
+              Rest
+            </NavLink>
           </li>
           <li>
-            <a href="#features">Features</a>
+            <NavLink to="/gymsrp-react/set" className="header__link">
+              Set
+            </NavLink>
           </li>
           <li>
-            <a href="#about">About</a>
+            <NavLink to="/gymsrp-react/percentage" className="header__link">
+              Percentage
+            </NavLink>
           </li>
           <li>
-            <a href="#review">Review</a>
+            <NavLink to="/gymsrp-react/rm" className="header__link">
+              1RM
+            </NavLink>
           </li>
           <li>
-            <a href="#pricing">Pricing</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
+            <NavLink to="/gymsrp-react/contact" className="header__link">
+              Contact
+            </NavLink>
           </li>
         </ul>
       </div>
@@ -58,6 +71,7 @@ function Header() {
               Contact
             </NavLink>
           </div>
+          <div onClick={activeMenu} id="toggle"></div>
         </div>
       </nav>
     </>
