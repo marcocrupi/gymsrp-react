@@ -40,29 +40,44 @@ body {
   color: #f0c32d;
   font-weight: bold;
   letter-spacing: 2px;
+  text-align: center;
+}
+
+.input-group {
+  margin: 1rem;
 }
 
 /* Custom scrollbar start */
 
-  /* width */
-  ::-webkit-scrollbar {
-    /* width: 10px; */
-    display: none;
+/* width */
+::-webkit-scrollbar {
+  /* width: 10px; */
+  display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f0c32d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Custom scrollbar end */
+
+@media screen and (max-width: 850px) {
+  .input-group {
+    width: 70%;
   }
 
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f0c32d;
+  .global__title {
+    font-size: 2rem;
   }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #888;
-  }
-
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-
-  /* Custom scrollbar end */
+}

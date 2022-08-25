@@ -32,3 +32,10 @@
 .input-group {
   margin: 1rem;
 }
+
+@media screen and (max-width: 850px) {
+  .percentage__container {
+  padding: 4rem 0;
+  align-items: center;
+}
+}

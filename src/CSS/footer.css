@@ -6,7 +6,6 @@ footer {
 
 .footer_element {
   padding: 0 1rem;
-  font-weight: bold;
   display: flex;
   height: 60px;
   align-items: center;
