@@ -150,6 +150,7 @@ function App() {
                 resetButton={resetButton}
                 setWorkMinutes={setWorkMinutes}
                 setWorkSeconds={setWorkSeconds}
+                isPausedRef={localStorage.getItem("isPausedRef")}
               />
             }
           />

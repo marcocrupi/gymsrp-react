@@ -50,6 +50,7 @@ function Rest(props) {
             onChange={(newValue) => props.setWorkMinutes(newValue)}
             min={0}
             max={60}
+            disabled={props.isPausedRef === "false"}
           />
 
           <label className="settings__label">
@@ -66,6 +67,7 @@ function Rest(props) {
             onChange={(newValue) => props.setWorkSeconds(newValue)}
             min={0}
             max={60}
+            disabled={props.isPausedRef === "false"}
           />
         </div>
       </div>
