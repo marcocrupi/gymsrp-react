@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   color: #eee;
-  height: 100vh;
+  min-height: 100vh;
 }
 .rest__components {
   width: 400px;
@@ -21,16 +21,16 @@
   cursor: pointer;
 }
 
-.play__button:focus {
+.play__button:active {
   color: rgb(41, 255, 41);
 }
 
-.reset__button:focus {
+.reset__button:active {
   color: rgb(255, 43, 43);
 }
 
-.pause__button:focus {
-  color: #2929ff;
+.pause__button:active {
+  color: #3ad8ff;
 }
 
 .container__label {

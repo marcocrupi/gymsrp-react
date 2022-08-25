@@ -14,6 +14,7 @@ function Rest(props) {
   return (
     <div className="rest__container">
       <div className="rest__components">
+        <div className="global__title">REST</div>
         <div>
           <CircularProgressbar
             value={props.secondsLeftRef === 0 ? 0 : props.percentage}

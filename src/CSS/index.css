@@ -13,7 +13,31 @@ body {
   height: 100%;
 }
 
+.description__shared {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: auto;
+  font-size: 1.3rem;
+  font-style: italic;
+  background-color: white;
+  border-bottom: 5px solid red;
+}
+
+.description__shared span {
+  margin: 1rem;
+}
+
 .home__outlet {
-    height: 100%;
-    background-color: #1b1b1b;
+  height: 100%;
+  background-color: #1b1b1b;
+}
+
+.global__title {
+  font-size: 3rem;
+  margin: 2rem;
+  color: #f0c32d;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
