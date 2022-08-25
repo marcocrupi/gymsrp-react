@@ -40,7 +40,7 @@ nav {
 @media screen and (max-width: 850px) {
 
   nav {
-    position: fixed;
+    position: sticky;
   }
 
   .header__navbar {
