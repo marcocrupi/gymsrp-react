@@ -3,8 +3,16 @@ import "../CSS/percentage.css";
 
 function Percentage() {
   const [percentvalues, setPercentvalues] = useState({
-    percentage: `${parseFloat(localStorage.getItem("Percentage"))}`,
-    of: `${parseFloat(localStorage.getItem("Of"))}`,
+    percentage: `${
+      isNaN(parseFloat(localStorage.getItem("Percentage")))
+        ? 0
+        : parseFloat(localStorage.getItem("Percentage"))
+    }`,
+    of: `${
+      isNaN(parseFloat(localStorage.getItem("Of")))
+        ? 0
+        : parseFloat(localStorage.getItem("Of"))
+    }`,
   });
 
   const value_handler = (e) => {
@@ -19,7 +27,9 @@ function Percentage() {
   };
 
   const [total, set_total] = useState(
-    parseFloat(localStorage.getItem("Total"))
+    isNaN(parseFloat(localStorage.getItem("Total")))
+      ? 0
+      : parseFloat(localStorage.getItem("Total"))
   );
 
   const calc_total = (newValues) => {

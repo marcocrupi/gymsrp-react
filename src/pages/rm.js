@@ -3,8 +3,16 @@ import "../CSS/rm.css";
 
 function Rm() {
   const [rmvalues, setRmValues] = useState({
-    weight: `${parseFloat(localStorage.getItem("Weight"))}`,
-    reps: `${parseFloat(localStorage.getItem("Reps"))}`,
+    weight: `${
+      isNaN(parseFloat(localStorage.getItem("Weight")))
+        ? 0
+        : parseFloat(localStorage.getItem("Weight"))
+    }`,
+    reps: `${
+      isNaN(parseFloat(localStorage.getItem("Reps")))
+        ? 0
+        : parseFloat(localStorage.getItem("Reps"))
+    }`,
   });
 
   const value_handler = (e) => {
@@ -19,7 +27,9 @@ function Rm() {
   };
 
   const [rmTotal, setRmTotal] = useState(
-    parseFloat(localStorage.getItem("RmTotal"))
+    isNaN(parseFloat(localStorage.getItem("RmTotal")))
+      ? 0
+      : parseFloat(localStorage.getItem("RmTotal"))
   );
 
   const calc_total = (newValues) => {
