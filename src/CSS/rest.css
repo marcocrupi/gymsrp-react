@@ -22,7 +22,7 @@
 }
 
 .play__button:focus {
-color: rgb(41, 255, 41);
+  color: rgb(41, 255, 41);
 }
 
 .reset__button:focus {
