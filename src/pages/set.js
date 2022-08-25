@@ -23,30 +23,40 @@ function Set() {
   };
 
   return (
-    <section>
-      <div className="set__title">
-        <span>SET</span>
+    <div className="set__container">
+      <div className="set__components">
+        <div className="global__title">
+          <span>SET</span>
+        </div>
+        <div className="set__counter">
+          {isNaN(counter)
+            ? setCounter(0)
+            : parseFloat(localStorage.getItem("counter"))}
+        </div>
+        <div className="set__buttons">
+          <button
+            onClick={add}
+            className="set__plus btn btn-warning btn-lg shadow-none"
+          >
+            +
+          </button>
+          <button
+            onClick={() => {
+              setCounter(0);
+            }}
+            className="set__reset btn btn-danger btn-lg shadow-none"
+          >
+            RESET
+          </button>
+          <button
+            onClick={less}
+            className="set__less btn btn-warning btn-lg shadow-none"
+          >
+            -
+          </button>
+        </div>
       </div>
-      <div className="set_counter">
-        {isNaN(counter) ? setCounter(0) : parseFloat(localStorage.getItem("counter"))}
-      </div>
-      <div className="set_buttons">
-        <button onClick={add} className="set__plus">
-          +
-        </button>
-        <button
-          onClick={() => {
-            setCounter(0);
-          }}
-          className="set__reset"
-        >
-          RESET
-        </button>
-        <button onClick={less} className="set__less">
-          -
-        </button>
-      </div>
-    </section>
+    </div>
   );
 }
 

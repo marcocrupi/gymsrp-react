@@ -1,19 +1,49 @@
-.set_counter {
-    margin: 1rem 0;
+.set__container {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
 }
 
-.set_buttons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.set__components {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.set__plus,.set__less {
-    height: 2rem;
-    width: 2rem;
+.set__counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 300px;
+  background-color: white;
+  border-radius: 200px;
+  font-size: 5rem;
+  color: black;
+  margin-bottom: 3rem;
 }
+
+.set__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.set__plus,
+.set__less {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  width: 3rem;
+}
+
 .set__reset {
-    margin: 0 1rem;
-    height: 2rem;
-    width: 4rem;
+  margin: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  width: 6rem;
 }
