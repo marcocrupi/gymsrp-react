@@ -1,6 +1,11 @@
 nav {
   height: 60px;
   background-color: #f0c32d;
+  width: 100%;
+}
+
+#navbar {
+  display: none;
 }
 
 .header__navbar {
@@ -34,5 +39,74 @@ nav {
 @media screen and (max-width: 850px) {
   .header__navbar {
     display: none;
+  }
+
+  #toggle {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 60px;
+    height: 60px;
+    background: black;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #toggle::before {
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    background: #fff;
+    transform: translateY(-5px);
+    transition: 0.2s;
+  }
+
+  #toggle::after {
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    background: #fff;
+    transform: translateY(5px);
+    transition: 0.2s;
+  }
+
+  #toggle.active::before {
+    transform: translateY(0px) rotate(45deg);
+  }
+
+  #toggle.active::after {
+    transform: translateY(0px) rotate(-45deg);
+  }
+
+  #toggle.active {
+   background: black;
+  }
+
+ #navbar {
+    position: fixed;
+    bottom: -100%;
+    right: 0;
+    width: 100%;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+  }
+
+  #navbar.active {
+    height: calc(100% - 60px);
+    bottom: 0;
+    width: 100%;
+  }
+
+  #navbar ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
