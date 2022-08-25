@@ -2,7 +2,7 @@ import React from 'react'
 
 function PlayButton( props ) {
   return (
-    <button {...props} className="playbutton__button">
+    <button {...props} className="control__button play__button">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-5 w-5"

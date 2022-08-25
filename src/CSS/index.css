@@ -1,6 +1,19 @@
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.home__outlet {
+    height: 100%;
+    background-color: #1b1b1b;
 }

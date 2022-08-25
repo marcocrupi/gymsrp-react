@@ -1,6 +1,6 @@
 function PauseButton(props) {
   return (
-    <button className="playbutton__button" {...props}>
+    <button className="control__button pause__button" {...props}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-5 w-5"

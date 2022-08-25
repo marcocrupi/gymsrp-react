@@ -1,5 +1,4 @@
 import React from "react";
-import { useState, useEffect, useRef } from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "../CSS/rest.css";
 import "react-circular-progressbar/dist/styles.css";
@@ -9,10 +8,9 @@ import ResetButton from "../components/resetbutton";
 import ReactSlider from "react-slider";
 import "../CSS/slider.css";
 
-const red = "#f54e4e";
+const firstColor = "#f0c32d";
 
 function Rest(props) {
-  
   return (
     <div className="rest__container">
       <div className="rest__components">
@@ -20,10 +18,14 @@ function Rest(props) {
           <CircularProgressbar
             value={props.secondsLeftRef === 0 ? 0 : props.percentage}
             text={props.minutes + ":" + props.seconds}
+            background
+            backgroundPadding={6}
             styles={buildStyles({
-              textColor: "#fff",
-              pathColor: red,
-              tailColor: "rgba(255,255,255,.2)",
+              backgroundColor: "#ffffff",
+              textColor: "#000000",
+              pathColor: firstColor,
+              textSize: "25px",
+              trailColor: "rgba(27,27,27,.1)",
             })}
           />
           <div style={{ marginTop: "20px" }}>
@@ -32,7 +34,7 @@ function Rest(props) {
             <ResetButton onClick={props.resetButton} />
           </div>
         </div>
-        <div style={{ textAlign: "left" }}>
+        <div className="container__label">
           <label className="settings__label">
             minutes: {parseInt(localStorage.getItem("SettingsInfoWorkMinutes"))}
           </label>
@@ -50,7 +52,7 @@ function Rest(props) {
             seconds: {parseInt(localStorage.getItem("SettingsInfoWorkSeconds"))}
           </label>
           <ReactSlider
-            className={"slider green"}
+            className={"slider"}
             thumbClassName={"thumb"}
             trackClassName={"track"}
             value={parseInt(localStorage.getItem("SettingsInfoWorkSeconds"))}

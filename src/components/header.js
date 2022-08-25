@@ -6,7 +6,7 @@ function Header() {
   return (
     <nav>
       <div className="header__logo">
-        <span>GYM SRP2</span>
+        <span>Gym SRP1B</span>
       </div>
       <div className="header__links">
         <NavLink to="/gymsrp-react" className="header__link">

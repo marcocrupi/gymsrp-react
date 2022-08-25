@@ -1,21 +1,18 @@
-:root{
-  --red: #f54e4e;
-  --green: #4aec8c;
-}
-
 .rest__container {
-  background-color: #30384b;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
   color: #eee;
   height: 100vh;
 }
 .rest__components {
-  padding-top: 50px;
-  max-width: 340px;
+  width: 400px;
+  min-width: 340px;
   margin: 0 auto;
   text-align: center;
 }
 
-.playbutton__button {
+.control__button {
   background-color: transparent;
   color: rgba(255, 255, 255, 0.8);
   border: 0;
@@ -24,22 +21,26 @@
   cursor: pointer;
 }
 
-.playbutton__button.with-text {
-  width: auto;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 10px 20px;
-  font-size: 1.4rem;
-  line-height: 36px;
+.play__button:focus {
+color: rgb(41, 255, 41);
 }
 
-.playbutton__button.with-text svg {
-  width: 36px;
-  float: left;
-  margin-right: 5px;
+.reset__button:focus {
+  color: rgb(255, 43, 43);
+}
+
+.pause__button:focus {
+  color: #2929ff;
+}
+
+.container__label {
+  margin-top: 50px;
+  text-align: left;
 }
 
 .settings__label {
+  font-size: 1.8rem;
+  letter-spacing: 2px;
   display: block;
   margin-bottom: 10px;
   margin-top: 20px;

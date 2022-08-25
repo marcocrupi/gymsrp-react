@@ -1,3 +1,5 @@
+import React from "react";
+import { useState, useEffect, useRef } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SharedLayout from "./pages/sharedlayout";
 import Set from "./pages/set";
@@ -5,9 +7,6 @@ import Rest from "./pages/rest";
 import Percentage from "./pages/percentage";
 import Rm from "./pages/rm";
 import Contact from "./pages/contact";
-
-import React from "react";
-import { useState, useEffect, useRef } from "react";
 
 function App() {
   const [workMinutes, setWorkMinutes] = useState(
@@ -87,9 +86,7 @@ function App() {
         if (secondsLeftRef.current === 0) {
           console.log("clear interval");
           clearInterval(interval);
-          return;
         }
-        return;
       }
       if (secondsLeftRef.current === 0) {
         return resetMode();
@@ -107,7 +104,6 @@ function App() {
 
   // LOCAL STORAGE - START
 
-  
   localStorage.setItem("totalSeconds", totalSeconds);
 
   // LOCAL STORAGE - END
