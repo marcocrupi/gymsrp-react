@@ -37,7 +37,10 @@ function Rest(props) {
         </div>
         <div className="container__label">
           <label className="settings__label">
-            minutes: {parseInt(localStorage.getItem("SettingsInfoWorkMinutes"))}
+            minutes:{" "}
+            <span className="rest__timerSettings">
+              {parseInt(localStorage.getItem("SettingsInfoWorkMinutes"))}
+            </span>
           </label>
           <ReactSlider
             className={"slider"}
@@ -50,7 +53,10 @@ function Rest(props) {
           />
 
           <label className="settings__label">
-            seconds: {parseInt(localStorage.getItem("SettingsInfoWorkSeconds"))}
+            seconds:{" "}
+            <span className="rest__timerSettings">
+              {parseInt(localStorage.getItem("SettingsInfoWorkSeconds"))}
+            </span>
           </label>
           <ReactSlider
             className={"slider"}

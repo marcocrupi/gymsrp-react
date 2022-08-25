@@ -1,0 +1,34 @@
+.rm__container {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.rm__components {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rm__total {
+  margin-top: 2rem;
+  color: white;
+}
+
+.rm__total {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 300px;
+  background-color: white;
+  border-radius: 200px;
+  font-size: 5rem;
+  color: black;
+  margin-bottom: 3rem;
+}
+
+.input-group {
+  margin: 1rem;
+}

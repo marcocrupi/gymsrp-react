@@ -13,6 +13,11 @@ body {
   height: 100%;
 }
 
+.home__outlet {
+  height: 100%;
+  background-color: #1b1b1b;
+}
+
 .description__shared {
   display: flex;
   justify-content: center;
@@ -22,16 +27,11 @@ body {
   font-size: 1.3rem;
   font-style: italic;
   background-color: white;
-  border-bottom: 5px solid red;
+  border-bottom: 3px solid red;
 }
 
 .description__shared span {
   margin: 1rem;
-}
-
-.home__outlet {
-  height: 100%;
-  background-color: #1b1b1b;
 }
 
 .global__title {

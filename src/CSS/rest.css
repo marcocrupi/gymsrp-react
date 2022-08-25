@@ -45,3 +45,8 @@
   margin-top: 20px;
   text-transform: capitalize;
 }
+
+.rest__timerSettings {
+  
+  color: rgb(251, 81, 81);
+}

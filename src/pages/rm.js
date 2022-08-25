@@ -67,52 +67,67 @@ function Rm() {
     }
   };
 
+  const rmReset = () => {
+    setRmValues(0);
+    setRmTotal(0);
+  };
+
   localStorage.setItem("Weight", rmvalues.weight);
   localStorage.setItem("Reps", rmvalues.reps);
   localStorage.setItem("RmTotal", rmTotal);
 
   return (
-    <section>
-      <div className="weight__title">
-        <span>1RM CALCULATOR</span>
-      </div>
-      <div className="input-group">
-        <span className="input-group-text">Reps:</span>
-        <input
-          className="form-control"
-          name="reps"
-          step="1"
-          min="0"
-          max="1000"
-          type="number"
-          onKeyDown={prevent}
-          value={parseFloat(localStorage.getItem("Reps"))}
-          onChange={value_handler}
-          placeholder="0"
-          pattern="[0-9]+"
-        />
-      </div>
-      <div className="input-group">
-        <span className="input-group-text">Weight:</span>
-        <input
-          className="form-control"
-          name="weight"
-          type="number"
-          onChange={value_handler}
-          placeholder="0"
-          step="1"
-          min="0"
-          max="200"
-          value={parseFloat(localStorage.getItem("Weight"))}
-          onKeyDown={prevent}
-          pattern="[0-9]+"
-        />
-      </div>
+    <div className="rm__container">
+      <div className="rm__components">
+        <div className="global__title">
+          <span>1RM CALCULATOR</span>
+        </div>
+        <div className="input-group">
+          <span className="input-group-text">Reps:</span>
+          <input
+            className="form-control"
+            name="reps"
+            step="1"
+            min="0"
+            max="1000"
+            type="number"
+            onKeyDown={prevent}
+            value={parseFloat(localStorage.getItem("Reps"))}
+            onChange={value_handler}
+            placeholder="0"
+            pattern="[0-9]+"
+          />
+        </div>
+        <div className="input-group">
+          <span className="input-group-text">Weight:</span>
+          <input
+            className="form-control"
+            name="weight"
+            type="number"
+            onChange={value_handler}
+            placeholder="0"
+            step="1"
+            min="0"
+            max="200"
+            value={parseFloat(localStorage.getItem("Weight"))}
+            onKeyDown={prevent}
+            pattern="[0-9]+"
+          />
+        </div>
 
-      <h2>
-        {isNaN(rmTotal) ? 0 : parseFloat(localStorage.getItem("RmTotal"))}
-      </h2>
-    </section>
+        <div className="rm__total">
+          {isNaN(rmTotal) ? 0 : parseFloat(localStorage.getItem("RmTotal"))}
+        </div>
+        <div>
+          <button
+            className="rm__reset btn btn-danger btn-lg shadow-none"
+            onClick={rmReset}
+          >
+            RESET
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }
 

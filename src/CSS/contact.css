@@ -1,0 +1,12 @@
+.contact__container {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.contact__components {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
