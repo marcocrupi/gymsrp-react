@@ -16,7 +16,9 @@ function Bmi() {
   });
 
   const [sex, setSex] = useState(
-    localStorage.getItem("sex") === null ? true : localStorage.getItem("sex")
+    localStorage.getItem("sex") === true
+      ? ""
+      : localStorage.getItem("sex")
   );
 
   const [category, setCategory] = useState(
@@ -58,7 +60,11 @@ function Bmi() {
     const { mass, height } = newValues;
 
     let opBmi = mass / (height * height);
-    const newTotal = opBmi.toFixed(2);
+    if (opBmi === Infinity) {
+        opBmi=0;
+    }
+    const newTotal = opBmi.toFixed(1);
+    
     setTotalBmi(newTotal);
   };
 
@@ -127,7 +133,6 @@ function Bmi() {
               name="flexRadioDefault"
               id="flexRadioDefault1"
               onChange={male}
-              checked
             />
             <label className="form-check-label" htmlFor="flexRadioDefault1">
               Male
@@ -185,14 +190,14 @@ function Bmi() {
           <span>BMI</span>
         </div>
         <div className="bmi__total">
-          {isNaN(totalBmi) ? 0 : parseFloat(localStorage.getItem("Total"))}
+          {isNaN(parseFloat(localStorage.getItem("Total")))
+            ? 0
+            : parseFloat(localStorage.getItem("Total"))}
         </div>
         <div className="bmi__resultBMI">
           <span>CATEGORY</span>
         </div>
-        <div className="bmi__category">
-          {category}
-        </div>
+        <div className="bmi__category">{category}</div>
         <div>
           <button
             className="bmi__reset btn btn-danger btn-lg shadow-none"
