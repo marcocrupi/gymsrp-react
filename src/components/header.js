@@ -3,15 +3,16 @@ import { NavLink } from "react-router-dom";
 import "../CSS/header.css";
 
 function Header() {
+
+  const toggle = document.getElementById("toggle");
+  const navbar = document.getElementById("navbar");
+
   document.onclick = function (e) {
     if (e.target.id !== "toggle" && e.target.id !== "navbar") {
       toggle.classList.remove("active");
       navbar.classList.remove("active");
     }
-  };
-
-  const toggle = document.getElementById("toggle");
-  const navbar = document.getElementById("navbar");
+  }; 
 
   const activeMenu = () => {
     toggle.classList.toggle("active");

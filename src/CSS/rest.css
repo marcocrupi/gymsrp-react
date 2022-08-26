@@ -21,16 +21,16 @@
   cursor: pointer;
 }
 
-.play__button:active {
+.play__button:focus {
   color: rgb(41, 255, 41);
 }
 
-.reset__button:active {
+.reset__button:focus {
   color: rgb(255, 43, 43);
 }
 
-.pause__button:active {
-  color: #3ad8ff;
+.pause__button:focus {
+  color: #f0c32d;
 }
 
 .container__label {

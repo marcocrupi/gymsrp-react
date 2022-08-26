@@ -38,6 +38,11 @@ function App() {
   const secondsLeftRef = useRef(secondsLeft);
   const isPausedRef = useRef(isPaused);
 
+  const resetB = document.getElementById("resetB");
+  const playB = document.getElementById("playB");
+
+
+
   // CONSOLE LOG - START
 
   // console.log("isPaused", isPaused);
@@ -61,6 +66,8 @@ function App() {
     console.log("secondsLeft", secondsLeftRef.current);
   }
 
+     
+
   useEffect(() => {
     function resetMode() {
       setWorkMinutes(0);
@@ -68,6 +75,7 @@ function App() {
       setSecondsLeft(0);
       isPausedRef.current = true;
       setIsPaused(true);
+      playB.classList.remove("play__button");
     }
 
     secondsLeftRef.current = workMinutes * 60 + workSeconds;
@@ -92,12 +100,13 @@ function App() {
         return resetMode();
       }
       if (localStorage.getItem("isPausedRef") === "false") {
+        playB.classList.add("play__button");
         tick();
       }
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [workMinutes, workSeconds]);
+  }, [workMinutes, workSeconds, playB]);
 
   const totalSeconds = workMinutes * 60 + workSeconds;
   const percentage = Math.round((secondsLeft / totalSeconds) * 100);
