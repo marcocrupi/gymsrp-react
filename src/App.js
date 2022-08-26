@@ -37,11 +37,8 @@ function App() {
 
   const secondsLeftRef = useRef(secondsLeft);
   const isPausedRef = useRef(isPaused);
-
-  const resetB = document.getElementById("resetB");
+  
   const playB = document.getElementById("playB");
-
-
 
   // CONSOLE LOG - START
 
@@ -65,8 +62,6 @@ function App() {
     setSecondsLeft(secondsLeftRef.current);
     console.log("secondsLeft", secondsLeftRef.current);
   }
-
-     
 
   useEffect(() => {
     function resetMode() {
