@@ -48,8 +48,6 @@ function Bmi() {
     calc_total(newValues);
   };
 
-  console.log("category", category);
-
   const [totalBmi, setTotalBmi] = useState(
     isNaN(parseFloat(localStorage.getItem("Total")))
       ? 0
@@ -77,6 +75,7 @@ function Bmi() {
   const bmiReset = () => {
     setBmi(0);
     setTotalBmi(0);
+    setCategory("");
   };
 
   useEffect(() => {
