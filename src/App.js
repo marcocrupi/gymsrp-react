@@ -41,7 +41,7 @@ function App() {
 
   const secondsLeftRef = useRef(secondsLeft);
   const isPausedRef = useRef(isPaused);
-
+audio.autoplay = false;
   // CONSOLE LOG - START
 
   // console.log("isPaused", isPaused);

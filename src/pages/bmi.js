@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../CSS/bmi.css";
 
 function Bmi() {
@@ -15,23 +15,25 @@ function Bmi() {
     }`,
   });
 
-   const [sex, setSex] = useState(
-     localStorage.getItem("sex") === null
-       ? true
-       : localStorage.getItem("sex")
-   );
+  const [sex, setSex] = useState(
+    localStorage.getItem("sex") === null ? true : localStorage.getItem("sex")
+  );
 
-    function male() {
-      setSex(true);
+  const [category, setCategory] = useState(
+    localStorage.getItem("category") === null
+      ? null
+      : localStorage.getItem("category")
+  );
 
-      console.log("male");
-    }
+  function male() {
+    setSex(true);
+    console.log("male", sex);
+  }
 
-    function female() {
-      setSex(false);
-   
-      console.log("female");
-    }
+  function female() {
+    setSex(false);
+    console.log("female", sex);
+  }
 
   const bmiValueHandler = (e) => {
     let name = e.target.name;
@@ -43,6 +45,8 @@ function Bmi() {
     setBmi(newValues);
     calc_total(newValues);
   };
+
+  console.log("category", category);
 
   const [totalBmi, setTotalBmi] = useState(
     isNaN(parseFloat(localStorage.getItem("Total")))
@@ -69,10 +73,45 @@ function Bmi() {
     setTotalBmi(0);
   };
 
+  useEffect(() => {
+    if (sex === true && totalBmi < 18.5) {
+      return setCategory("Underweight");
+    }
+    if (sex === true && totalBmi >= 18.5 && totalBmi <= 24.9) {
+      return setCategory("Normal Weight");
+    }
+    if (sex === true && totalBmi >= 25 && totalBmi <= 29.9) {
+      return setCategory("Overweight");
+    }
+    if (sex === true && totalBmi >= 30 && totalBmi <= 34.9) {
+      return setCategory("Severe Overweight");
+    }
+    if (sex === true && totalBmi > 35) {
+      return setCategory("Obesity");
+    }
+
+    if (sex === false && totalBmi < 17.5) {
+      return setCategory("Underweight");
+    }
+    if (sex === false && totalBmi >= 17.5 && totalBmi <= 24) {
+      return setCategory("Normal Weight");
+    }
+    if (sex === false && totalBmi >= 24 && totalBmi <= 29) {
+      return setCategory("Overweight");
+    }
+    if (sex === false && totalBmi >= 29 && totalBmi <= 34) {
+      return setCategory("Severe Overweight");
+    }
+    if (sex === false && totalBmi > 34) {
+      return setCategory("Obesity");
+    }
+  }, [sex, totalBmi]);
+
   localStorage.setItem("mass", bmi.mass);
   localStorage.setItem("height", bmi.height);
   localStorage.setItem("Total", totalBmi);
   localStorage.setItem("sex", sex);
+  localStorage.setItem("category", category);
 
   return (
     <div className="bmi__container">
@@ -140,8 +179,18 @@ function Bmi() {
           />
           <span className="input-group-text">m</span>
         </div>
+
+        <div className="bmi__resultBMI">
+          <span>BMI</span>
+        </div>
         <div className="bmi__total">
           {isNaN(totalBmi) ? 0 : parseFloat(localStorage.getItem("Total"))}
+        </div>
+        <div className="bmi__resultBMI">
+          <span>CATEGORY</span>
+        </div>
+        <div className="bmi__category">
+          {category === null ? null : localStorage.getItem("category")}
         </div>
         <div>
           <button
