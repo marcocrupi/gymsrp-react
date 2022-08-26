@@ -13,6 +13,7 @@ import Beep from "./sounds/Bleep-SoundBible.com-1927126940.mp3";
 
 function App() {
   const [audio] = useState(new Audio(Beep));
+  audio.autoplay = true;
   const [workMinutes, setWorkMinutes] = useState(
     isNaN(parseInt(localStorage.getItem("SettingsInfoWorkMinutes")))
       ? 0
@@ -41,7 +42,7 @@ function App() {
 
   const secondsLeftRef = useRef(secondsLeft);
   const isPausedRef = useRef(isPaused);
-audio.autoplay = false;
+  
   // CONSOLE LOG - START
 
   // console.log("isPaused", isPaused);
@@ -78,7 +79,7 @@ audio.autoplay = false;
         localStorage.getItem("isPausedRef") === "false"
       ) {
         audio.play();
-        swal("Time out!","", "success");
+        swal("Time out!", "", "success");
       }
     }
 
