@@ -7,10 +7,10 @@ import Rest from "./pages/rest";
 import Percentage from "./pages/percentage";
 import Rm from "./pages/rm";
 import Contact from "./pages/contact";
-import Beep from "./sounds/Bleep-SoundBible.com-1927126940.mp3"
+import Beep from "./sounds/Bleep-SoundBible.com-1927126940.mp3";
 
 function App() {
-  const [audio] = useState(new Audio(Beep));
+  // const [audio] = useState(new Audio(Beep));
   const [workMinutes, setWorkMinutes] = useState(
     isNaN(parseInt(localStorage.getItem("SettingsInfoWorkMinutes")))
       ? 0
@@ -73,7 +73,7 @@ function App() {
       isPausedRef.current = true;
       setIsPaused(true);
       playB.classList.remove("play__button");
-      audio.play();
+      // audio.play();
     }
 
     secondsLeftRef.current = workMinutes * 60 + workSeconds;
