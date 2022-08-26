@@ -73,7 +73,7 @@ function App() {
       isPausedRef.current = true;
       setIsPaused(true);
       playB.classList.remove("play__button");
-      audio.play();
+      localStorage.getItem("isPausedRef") === "false" ? audio.play() : audio.pause();
     }
 
     secondsLeftRef.current = workMinutes * 60 + workSeconds;
