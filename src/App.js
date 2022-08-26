@@ -40,7 +40,7 @@ function App() {
   const secondsLeftRef = useRef(secondsLeft);
   const isPausedRef = useRef(isPaused);
 
-  const playB = document.getElementById("playB");
+  // const playB = document.getElementById("playB");
 
   // CONSOLE LOG - START
 
@@ -72,7 +72,7 @@ function App() {
       setSecondsLeft(0);
       isPausedRef.current = true;
       setIsPaused(true);
-      playB.classList.remove("play__button");
+      // playB.classList.remove("play__button");
       // audio.play();
     }
 
@@ -98,13 +98,13 @@ function App() {
         return resetMode();
       }
       if (localStorage.getItem("isPausedRef") === "false") {
-        playB.classList.add("play__button");
+        // playB.classList.add("play__button");
         tick();
       }
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [workMinutes, workSeconds, playB]);
+  }, [workMinutes, workSeconds]);
 
   const totalSeconds = workMinutes * 60 + workSeconds;
   const percentage = Math.round((secondsLeft / totalSeconds) * 100);
