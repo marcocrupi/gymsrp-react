@@ -49,9 +49,9 @@ function Bmi() {
   };
 
   const [totalBmi, setTotalBmi] = useState(
-    isNaN(parseFloat(localStorage.getItem("Total")))
+    isNaN(parseFloat(localStorage.getItem("totalBmi")))
       ? 0
-      : parseFloat(localStorage.getItem("Total"))
+      : parseFloat(localStorage.getItem("totalBmi"))
   );
 
   const calc_total = (newValues) => {
@@ -114,7 +114,7 @@ function Bmi() {
 
   localStorage.setItem("mass", bmi.mass);
   localStorage.setItem("height", bmi.height);
-  localStorage.setItem("Total", totalBmi);
+  localStorage.setItem("totalBmi", totalBmi);
   localStorage.setItem("sex", sex);
   localStorage.setItem("category", category);
 
@@ -189,14 +189,14 @@ function Bmi() {
           <span>BMI</span>
         </div>
         <div className="bmi__total">
-          {isNaN(parseFloat(localStorage.getItem("Total")))
-            ? 0
-            : parseFloat(localStorage.getItem("Total"))}
+          {isNaN(totalBmi) ? 0 : parseFloat(localStorage.getItem("totalBmi"))}
         </div>
         <div className="bmi__resultBMI">
           <span>CATEGORY</span>
         </div>
-        <div className="bmi__category">{category}</div>
+        <div className="bmi__category">
+          {category === "" ? "" : localStorage.getItem("category")}
+        </div>
         <div>
           <button
             className="bmi__reset btn btn-danger btn-lg shadow-none"
