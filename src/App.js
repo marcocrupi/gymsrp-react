@@ -104,7 +104,7 @@ function App() {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [workMinutes, workSeconds, audio, playB]);
+  }, [workMinutes, workSeconds, playB]);
 
   const totalSeconds = workMinutes * 60 + workSeconds;
   const percentage = Math.round((secondsLeft / totalSeconds) * 100);
