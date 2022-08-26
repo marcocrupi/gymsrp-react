@@ -14,8 +14,9 @@
 .radio__bmi {
     color: white;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     width: 100%;   
+    font-size: 1.2rem;
 }
 
 .singleRadio__bmi {
@@ -33,7 +34,7 @@
   font-size: 2rem;
   color: black;
   margin-bottom: 2rem;
-  border-radius: 30px;
+  border-radius: 50px;
 }
 
 .bmi__resultBMI {
@@ -53,7 +54,7 @@
   font-size: 2rem;
   color: black;
   margin-bottom: 3rem;
-  border-radius: 30px;
+  border-radius: 50px;
 }
 
 p {

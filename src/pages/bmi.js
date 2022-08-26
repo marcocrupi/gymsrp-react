@@ -21,7 +21,7 @@ function Bmi() {
 
   const [category, setCategory] = useState(
     localStorage.getItem("category") === null
-      ? null
+      ? ""
       : localStorage.getItem("category")
   );
 
@@ -127,6 +127,7 @@ function Bmi() {
               name="flexRadioDefault"
               id="flexRadioDefault1"
               onChange={male}
+              checked
             />
             <label className="form-check-label" htmlFor="flexRadioDefault1">
               Male
@@ -190,7 +191,7 @@ function Bmi() {
           <span>CATEGORY</span>
         </div>
         <div className="bmi__category">
-          {category === null ? null : localStorage.getItem("category")}
+          {category}
         </div>
         <div>
           <button
