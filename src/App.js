@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect, useRef } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SharedLayout from "./pages/sharedlayout";
+import swal from "sweetalert";
 import Set from "./pages/set";
 import Rest from "./pages/rest";
 import Percentage from "./pages/percentage";
@@ -71,12 +72,14 @@ function App() {
       setSecondsLeft(0);
       isPausedRef.current = true;
       setIsPaused(true);
-      audio.play();
+
       if (
         secondsLeftRef.current === 0 &&
         localStorage.getItem("isPausedRef") === "false"
-      ) {alert("Time out!")}
-        
+      ) {
+        audio.play();
+        swal("Time out!","", "success");
+      }
     }
 
     secondsLeftRef.current = workMinutes * 60 + workSeconds;

@@ -41,6 +41,10 @@
   margin-bottom: 3rem;
 }
 
+p {
+    color: black;
+}
+
 @media screen and (max-width: 850px) {
   .bmi__container {
   align-items: center;
