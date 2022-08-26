@@ -44,6 +44,11 @@ function Header() {
             </NavLink>
           </li>
           <li>
+            <NavLink to="/gymsrp-react/bmi" className="header__link">
+              BMI
+            </NavLink>
+          </li>
+          <li>
             <NavLink to="/gymsrp-react/contact" className="header__link">
               Contact
             </NavLink>
@@ -67,6 +72,9 @@ function Header() {
             </NavLink>
             <NavLink to="/gymsrp-react/rm" className="header__link">
               1RM
+            </NavLink>
+            <NavLink to="/gymsrp-react/bmi" className="header__link">
+              BMI
             </NavLink>
             <NavLink to="/gymsrp-react/contact" className="header__link">
               Contact

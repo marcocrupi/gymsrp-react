@@ -1,0 +1,48 @@
+.bmi__container {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 3rem 0;
+}
+
+.bmi__components {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.radio__bmi {
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;   
+}
+
+.singleRadio__bmi {
+    margin: 0 1rem;
+    margin-bottom: 1rem;
+}
+
+.bmi__total {
+  margin-top: 2rem;
+  color: white;
+}
+
+.bmi__total {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 300px;
+  background-color: white;
+  border-radius: 200px;
+  font-size: 5rem;
+  color: black;
+  margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 850px) {
+  .bmi__container {
+  align-items: center;
+}
+}

@@ -7,6 +7,7 @@ import Rest from "./pages/rest";
 import Percentage from "./pages/percentage";
 import Rm from "./pages/rm";
 import Contact from "./pages/contact";
+import Bmi from "./pages/bmi";
 import Beep from "./sounds/Bleep-SoundBible.com-1927126940.mp3";
 
 function App() {
@@ -40,8 +41,6 @@ function App() {
   const secondsLeftRef = useRef(secondsLeft);
   const isPausedRef = useRef(isPaused);
 
-  // const playB = document.getElementById("playB");
-
   // CONSOLE LOG - START
 
   // console.log("isPaused", isPaused);
@@ -72,8 +71,12 @@ function App() {
       setSecondsLeft(0);
       isPausedRef.current = true;
       setIsPaused(true);
-      // playB.classList.remove("play__button");
       audio.play();
+      if (
+        secondsLeftRef.current === 0 &&
+        localStorage.getItem("isPausedRef") === "false"
+      ) {alert("Time out!")}
+        
     }
 
     secondsLeftRef.current = workMinutes * 60 + workSeconds;
@@ -98,7 +101,6 @@ function App() {
         return resetMode();
       }
       if (localStorage.getItem("isPausedRef") === "false") {
-        // playB.classList.add("play__button");
         tick();
       }
     }, 1000);
@@ -164,6 +166,7 @@ function App() {
           <Route path="/gymsrp-react/set" element={<Set />} />
           <Route path="/gymsrp-react/percentage" element={<Percentage />} />
           <Route path="/gymsrp-react/rm" element={<Rm />} />
+          <Route path="/gymsrp-react/bmi" element={<Bmi />} />
           <Route path="/gymsrp-react/contact" element={<Contact />} />
         </Route>
       </Routes>
