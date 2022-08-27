@@ -129,11 +129,11 @@ nav {
 
 @media screen and (max-width: 500px) {
   nav {
-    height: 40px;
+    height: 50px;
   }
 
   .header__navbar {
-    height: 40px;
+    height: 50px;
   }
   .header__logo span {
     font-size: 1.2rem;
@@ -142,12 +142,19 @@ nav {
   #toggle {
     top: 0px;
     right: 0px;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     background: rgb(0, 0, 0);
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
+  #navbar.active {
+    height: calc(100% - 50px);
+    bottom: 0;
+    width: 100%;
+  }
+
 }
