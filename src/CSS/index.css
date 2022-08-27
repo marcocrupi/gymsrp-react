@@ -37,6 +37,7 @@ body {
 .global__title {
   font-size: 3rem;
   margin-bottom: 1rem;
+  margin: 0 2rem;
   color: #f0c32d;
   font-weight: bold;
   letter-spacing: 2px;
@@ -44,7 +45,7 @@ body {
 }
 
 .input-group {
-  margin: 1rem;
+  margin: 0.5rem;
 }
 
 /* Custom scrollbar start */

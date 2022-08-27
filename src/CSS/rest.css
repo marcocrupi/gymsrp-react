@@ -1,12 +1,14 @@
 .rest__container {
   display: flex;
   justify-content: center;
+  align-items: center;
   color: #eee;
   height: 100%;
+  overflow: scroll;
 }
 
 .rest__components {
-  width: 400px;
+  width: 300px;
   text-align: center;
 }
 
@@ -55,7 +57,7 @@
 }
 
 .rest__components {
-  width: 200px;
+  width: 190px;
 }
 
 .control__button {

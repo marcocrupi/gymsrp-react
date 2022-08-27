@@ -191,9 +191,9 @@ function Bmi() {
         <div className="bmi__total">
           {isNaN(totalBmi) ? 0 : parseFloat(localStorage.getItem("totalBmi"))}
         </div>
-        <div className="bmi__resultBMI">
+        {/* <div className="bmi__resultBMI">
           <span>CATEGORY</span>
-        </div>
+        </div> */}
         <div className="bmi__category">
           {category === "" ? "" : localStorage.getItem("category")}
         </div>

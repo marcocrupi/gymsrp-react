@@ -1,9 +1,10 @@
 .contact__container {
-  display: flex;
+    display: flex;
   justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-  padding: 2rem 0;
+  align-items: center;
+  color: #eee;
+  height: 100%;
+  overflow: scroll;
 }
 
 .contact__components {

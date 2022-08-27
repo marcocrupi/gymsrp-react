@@ -1,8 +1,10 @@
 .bmi__container {
   display: flex;
   justify-content: center;
-  min-height: 100vh;
-  padding: 3rem 0;
+  align-items: center;
+  color: #eee;
+  height: 100%;
+  overflow: scroll;
 }
 
 .bmi__components {
@@ -12,6 +14,7 @@
 }
 
 .radio__bmi {
+  margin-top: 1rem;
     color: white;
     display: flex;
     justify-content: center;
@@ -21,40 +24,40 @@
 
 .singleRadio__bmi {
     margin: 0 1rem;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
 }
 
 .bmi__total {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80px;
+  height: 50px;
   width: 300px;
   background-color: white;
   font-size: 2rem;
   color: black;
-  margin-bottom: 2rem;
-  border-radius: 50px;
+  margin-bottom: 1rem;
+  border-radius: 10px;
 }
 
 .bmi__resultBMI {
   color: #f0c32d;
   font-weight: bold;
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .bmi__category {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80px;
+  height: 50px;
   width: 300px;
   background-color: white;
   font-size: 2rem;
   color: black;
-  margin-bottom: 3rem;
-  border-radius: 50px;
+  margin-bottom: 1rem;
+  border-radius: 10px;
 }
 
 p {
