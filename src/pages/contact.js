@@ -47,7 +47,7 @@ function Contact() {
               target="_blank"
               rel="noreferrer"
             >
-              <button className="contact__email btn btn-danger btn-lg shadow-none">
+              <button className="contact__email btn btn-primary btn-lg shadow-none">
                 <ion-icon name="logo-linkedin"></ion-icon>
               </button>
             </a>
