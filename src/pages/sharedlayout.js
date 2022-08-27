@@ -1,14 +1,15 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/header";
-import Footer from "../components/footer";
+import Bottomnav from "../components/bottomnav";
 import "../CSS/sharedlayout.css";
+import Footer from "../components/footer";
 
 function SharedLayout() {
   return (
-    <>
+    <div className="shared__container">
       <Header />
       <div className="home__outlet">
-         {/* <div className="description__shared">
+        {/* <div className="description__shared">
           <span>
             An app to keep track of sets, recovery times, calculate simple
             percentages and predict your 1RM.
@@ -17,7 +18,8 @@ function SharedLayout() {
         <Outlet />
       </div>
       <Footer />
-    </>
+      <Bottomnav />
+    </div>
   );
 }
 
