@@ -1,27 +1,28 @@
-import React from "react";
+import React, { useRef } from "react";
 import { NavLink } from "react-router-dom";
 import "../CSS/header.css";
 
 function Header() {
 
-  const toggle = document.getElementById("toggle");
-  const navbar = document.getElementById("navbar");
-
-  document.onclick = function (e) {
-    if (e.target.id !== "toggle" && e.target.id !== "navbar") {
-      toggle.classList.remove("active");
-      navbar.classList.remove("active");
-    }
-  }; 
-
-  const activeMenu = () => {
-    toggle.classList.toggle("active");
-    navbar.classList.toggle("active");
-  };
+   const toggle = useRef(null);
+   const navbar = useRef(null);
+ 
+document.onclick = function (e) {
+  if (e.target.id !== "toggle" && e.target.id !== "navbar") {
+    toggle.current.classList.remove("active");
+    navbar.current.classList.remove("active");
+  }
+}; 
+ 
+ const activeMenu = () => {
+   toggle.current.classList.toggle("active");
+   navbar.current.classList.toggle("active");
+ };
+ 
 
   return (
     <>
-      <div id="navbar">
+      <div ref={navbar} id="navbar">
         <ul>
           <li>
             <NavLink to="/gymsrp-react" className="header__link">
@@ -80,7 +81,7 @@ function Header() {
               Contact
             </NavLink>
           </div>
-          <div onClick={activeMenu} id="toggle"></div>
+          <div onClick={activeMenu} ref={toggle} id="toggle"></div>
         </div>
       </nav>
     </>
