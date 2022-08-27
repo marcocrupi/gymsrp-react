@@ -1,5 +1,5 @@
 .contact__container {
-    display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   color: #eee;
@@ -12,7 +12,6 @@
   flex-direction: column;
   align-items: center;
   width: 600px;
-  min-width: 320px;
 }
 
 .contact__photoMarcoCrupi {
@@ -30,12 +29,19 @@
   letter-spacing: 1.2px;
 }
 
-.contact__name,.contact__role {
+.contact__name,
+.contact__role {
   color: white;
   text-align: center;
   font-size: 1.2rem;
   letter-spacing: 1.2px;
   font-weight: bold;
+}
+
+.contact__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .contact__email {
@@ -44,4 +50,35 @@
   align-items: center;
   width: 4rem;
   height: 3rem;
+}
+
+@media screen and (max-width: 500px) {
+  .contact__components {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+  }
+
+  .contact__description p {
+    margin: 2rem 2rem;
+    color: white;
+    text-align: center;
+    line-height: 2rem;
+    font-size: 1.2rem;
+    letter-spacing: 1.2px;
+  }
+  .contact__description p {
+    margin: 1rem 1rem;
+    color: white;
+    text-align: center;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    letter-spacing: 1.2px;
+  }
+  .contact__photoMarcoCrupi {
+    width: 8rem;
+    border-radius: 100px;
+    padding: 2;
+  }
 }

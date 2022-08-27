@@ -126,3 +126,28 @@ nav {
     margin: 2rem 0;
   }
 }
+
+@media screen and (max-width: 500px) {
+  nav {
+    height: 40px;
+  }
+
+  .header__navbar {
+    height: 40px;
+  }
+  .header__logo span {
+    font-size: 1.2rem;
+  }
+
+  #toggle {
+    top: 0px;
+    right: 0px;
+    width: 40px;
+    height: 40px;
+    background: rgb(0, 0, 0);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

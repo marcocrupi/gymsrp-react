@@ -80,5 +80,12 @@ body {
 
   .global__title {
     font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .global__title {
+    margin-top: 1rem;
   }
 }
