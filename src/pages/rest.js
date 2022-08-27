@@ -20,7 +20,7 @@ function Rest(props) {
             value={props.secondsLeftRef === 0 ? 0 : props.percentage}
             text={props.minutes + ":" + props.seconds}
             background
-            backgroundPadding={6}
+            backgroundPadding={4}
             styles={buildStyles({
               backgroundColor: "#ffffff",
               textColor: "#000000",
@@ -29,7 +29,7 @@ function Rest(props) {
               trailColor: "rgba(27,27,27,.1)",
             })}
           />
-          <div style={{ marginTop: "20px" }}>
+          <div style={{ marginTop: "10px" }}>
             <PlayButton onClick={props.playButton} />
             <PauseButton onClick={props.pauseButton} />
             <ResetButton onClick={props.resetButton} />

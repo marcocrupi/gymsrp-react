@@ -1,13 +1,12 @@
 .rest__container {
-  padding: 3rem 0;
   display: flex;
   justify-content: center;
   color: #eee;
+  height: 100%;
 }
 
 .rest__components {
   width: 400px;
-  min-width: 320px;
   text-align: center;
 }
 
@@ -33,8 +32,8 @@
 }
 
 .container__label {
-  margin-top: 50px;
-  text-align: left;
+  margin-top: 2rem;
+  text-align: center;
 }
 
 .settings__label {
@@ -56,6 +55,25 @@
 }
 
 .rest__components {
-  width: 320px;
+  width: 200px;
 }
+
+.control__button {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  border: 0;
+  display: inline-block;
+  width: 50px;
+  cursor: pointer;
+}
+
+.settings__label {
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.rest__timerSettings {
+  color: #f0c32d;
+}
+
 }
