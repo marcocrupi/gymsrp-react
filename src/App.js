@@ -42,7 +42,8 @@ function App() {
 
   const secondsLeftRef = useRef(secondsLeft);
   const isPausedRef = useRef(isPaused);
-  
+  const refplay = useRef(null);
+
   // CONSOLE LOG - START
 
   // console.log("isPaused", isPaused);
@@ -164,6 +165,7 @@ function App() {
                 setWorkMinutes={setWorkMinutes}
                 setWorkSeconds={setWorkSeconds}
                 isPausedRef={localStorage.getItem("isPausedRef")}
+                ref={refplay}
               />
             }
           />
