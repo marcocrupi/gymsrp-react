@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/gymsrp-react/static/css/main.cc216127.css",
-    "main.js": "/gymsrp-react/static/js/main.5bb85cd9.js",
+    "main.css": "/gymsrp-react/static/css/main.f868680a.css",
+    "main.js": "/gymsrp-react/static/js/main.835eb585.js",
     "static/js/787.6861076a.chunk.js": "/gymsrp-react/static/js/787.6861076a.chunk.js",
     "static/media/marco_crupi.jpg": "/gymsrp-react/static/media/marco_crupi.7cd67ed58f24be318716.jpg",
     "static/media/Bleep-SoundBible.com-1927126940.mp3": "/gymsrp-react/static/media/Bleep-SoundBible.com-1927126940.478eccf11cf3f3dda452.mp3",
     "index.html": "/gymsrp-react/index.html",
-    "main.cc216127.css.map": "/gymsrp-react/static/css/main.cc216127.css.map",
-    "main.5bb85cd9.js.map": "/gymsrp-react/static/js/main.5bb85cd9.js.map",
+    "main.f868680a.css.map": "/gymsrp-react/static/css/main.f868680a.css.map",
+    "main.835eb585.js.map": "/gymsrp-react/static/js/main.835eb585.js.map",
     "787.6861076a.chunk.js.map": "/gymsrp-react/static/js/787.6861076a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cc216127.css",
-    "static/js/main.5bb85cd9.js"
+    "static/css/main.f868680a.css",
+    "static/js/main.835eb585.js"
   ]
 }
