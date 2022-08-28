@@ -5,12 +5,12 @@ function Percentage() {
   const [percentvalues, setPercentvalues] = useState({
     percentage: `${
       isNaN(parseFloat(localStorage.getItem("Percentage")))
-        ? null
+        ? 0
         : parseFloat(localStorage.getItem("Percentage"))
     }`,
     of: `${
       isNaN(parseFloat(localStorage.getItem("Of")))
-        ? null
+        ? 0
         : parseFloat(localStorage.getItem("Of"))
     }`,
   });
@@ -91,7 +91,11 @@ function Percentage() {
             step="1"
             min="0"
             max="200"
-            value={parseFloat(localStorage.getItem("Percentage"))}
+            value={
+              parseFloat(localStorage.getItem("Percentage")) === 0
+                ? undefined
+                : parseFloat(localStorage.getItem("Percentage"))
+            }
             onKeyDown={prevent}
             pattern="[0-9]+"
           />
@@ -107,7 +111,11 @@ function Percentage() {
             max="1000"
             type="number"
             onKeyDown={prevent}
-            value={parseFloat(localStorage.getItem("Of"))}
+            value={
+              parseFloat(localStorage.getItem("Of")) === 0
+                ? undefined
+                : parseFloat(localStorage.getItem("Of"))
+            }
             onChange={value_handler}
             placeholder="0"
             pattern="[0-9]+"

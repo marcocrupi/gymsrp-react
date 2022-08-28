@@ -5,12 +5,12 @@ function Rm() {
   const [rmvalues, setRmValues] = useState({
     weight: `${
       isNaN(parseFloat(localStorage.getItem("Weight")))
-        ? null
+        ? 0
         : parseFloat(localStorage.getItem("Weight"))
     }`,
     reps: `${
       isNaN(parseFloat(localStorage.getItem("Reps")))
-        ? null
+        ? 0
         : parseFloat(localStorage.getItem("Reps"))
     }`,
   });
@@ -92,7 +92,11 @@ function Rm() {
             max="1000"
             type="number"
             onKeyDown={prevent}
-            value={parseFloat(localStorage.getItem("Reps"))}
+            value={
+              parseFloat(localStorage.getItem("Reps")) === 0
+                ? undefined
+                : parseFloat(localStorage.getItem("Reps"))
+            }
             onChange={value_handler}
             placeholder="0"
             pattern="[0-9]+"
@@ -109,7 +113,11 @@ function Rm() {
             step="1"
             min="0"
             max="200"
-            value={parseFloat(localStorage.getItem("Weight"))}
+            value={
+              parseFloat(localStorage.getItem("Weight")) === 0
+                ? undefined
+                : parseFloat(localStorage.getItem("Weight"))
+            }
             onKeyDown={prevent}
             pattern="[0-9]+"
           />

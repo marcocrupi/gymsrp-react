@@ -5,12 +5,12 @@ function Bmi() {
   const [bmi, setBmi] = useState({
     mass: `${
       isNaN(parseFloat(localStorage.getItem("mass")))
-        ? null
+        ? 0
         : parseFloat(localStorage.getItem("mass"))
     }`,
     height: `${
       isNaN(parseFloat(localStorage.getItem("height")))
-        ? null
+        ? 0
         : parseFloat(localStorage.getItem("height"))
     }`,
   });
@@ -161,7 +161,11 @@ function Bmi() {
             step="1"
             min="0"
             max="200"
-            value={parseFloat(localStorage.getItem("mass"))}
+            value={
+              parseFloat(localStorage.getItem("mass")) === 0
+                ? undefined
+                : parseFloat(localStorage.getItem("mass"))
+            }
             onKeyDown={prevent}
             pattern="[0-9]+"
           />
@@ -177,7 +181,11 @@ function Bmi() {
             max="1000"
             type="number"
             onKeyDown={prevent}
-            value={parseFloat(localStorage.getItem("height"))}
+            value={
+              parseFloat(localStorage.getItem("height")) === 0
+                ? undefined
+                : parseFloat(localStorage.getItem("height"))
+            }
             onChange={bmiValueHandler}
             placeholder="0"
             pattern="[0-9]+"
