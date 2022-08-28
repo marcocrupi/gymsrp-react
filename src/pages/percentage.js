@@ -5,12 +5,12 @@ function Percentage() {
   const [percentvalues, setPercentvalues] = useState({
     percentage: `${
       isNaN(parseFloat(localStorage.getItem("Percentage")))
-        ? 0
+        ? null
         : parseFloat(localStorage.getItem("Percentage"))
     }`,
     of: `${
       isNaN(parseFloat(localStorage.getItem("Of")))
-        ? 0
+        ? null
         : parseFloat(localStorage.getItem("Of"))
     }`,
   });

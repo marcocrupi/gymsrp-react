@@ -5,12 +5,12 @@ function Bmi() {
   const [bmi, setBmi] = useState({
     mass: `${
       isNaN(parseFloat(localStorage.getItem("mass")))
-        ? 0
+        ? null
         : parseFloat(localStorage.getItem("mass"))
     }`,
     height: `${
       isNaN(parseFloat(localStorage.getItem("height")))
-        ? 0
+        ? null
         : parseFloat(localStorage.getItem("height"))
     }`,
   });

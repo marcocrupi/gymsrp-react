@@ -5,12 +5,12 @@ function Rm() {
   const [rmvalues, setRmValues] = useState({
     weight: `${
       isNaN(parseFloat(localStorage.getItem("Weight")))
-        ? 0
+        ? null
         : parseFloat(localStorage.getItem("Weight"))
     }`,
     reps: `${
       isNaN(parseFloat(localStorage.getItem("Reps")))
-        ? 0
+        ? null
         : parseFloat(localStorage.getItem("Reps"))
     }`,
   });
