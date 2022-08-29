@@ -12,6 +12,13 @@
   text-align: center;
 }
 
+.rest__circularandbuttons {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
 .control__button {
   background-color: transparent;
   color: rgba(255, 255, 255, 0.8);
@@ -21,7 +28,7 @@
   cursor: pointer;
 }
 
-.play__button:focus {
+/* .play__button:focus {
   color: rgb(41, 255, 41);
 }
 
@@ -31,7 +38,7 @@
 
 .pause__button:focus {
   color: #f0c32d;
-}
+} */
 
 .container__label {
   margin-top: 1rem;
@@ -51,13 +58,57 @@
   color: #f0c32d;
 }
 
+.supportSlider {
+  outline: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  margin: 0;
+  position: relative;
+  box-shadow: 0px 0px 5px #ffffff;
+  border-radius: 50%;
+}
+
+.supportSlider:before,
+.supportSlider:after {
+  display: inline-block;
+  position: absolute;
+  content: "";
+  width: 1rem;
+  height: 2px;
+  background-color: #ffffff;
+  transform: translate(-50%, -50%);
+}
+
+.supportSlider.plus:after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.sliderBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 @media screen and (max-width: 850px) {
   .rest__container {
-  align-items: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.rest__circularprogressbar {
+  display: flex;
+  justify-content: center;
+  width: 200px;
 }
 
 .rest__components {
-  width: 200px;
+  width: auto;
 }
 
 .control__button {

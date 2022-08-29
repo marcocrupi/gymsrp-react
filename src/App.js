@@ -54,6 +54,7 @@ function App() {
 
   // LOCAL STORAGE SET ITEM - START
 
+  localStorage.setItem("isPaused", isPaused);
   localStorage.setItem("isPausedRef", isPausedRef.current);
   localStorage.setItem("secondsLeftRef", secondsLeftRef.current);
 
@@ -110,7 +111,36 @@ function App() {
     }, 1000);
 
     return () => clearInterval(interval);
+
+    
+
   }, [workMinutes, workSeconds, audio]);
+
+  function plusMinutes() {
+    setWorkMinutes(workMinutes + 1);
+    if (workMinutes >= 60) {
+      setWorkMinutes(60);
+    }
+  }
+  function lessMinutes() {
+    setWorkMinutes(workMinutes - 1);
+    if (workMinutes <= 0) {
+      setWorkMinutes(0);
+    }
+  }
+
+  function plusSeconds() {
+    setWorkSeconds(workSeconds + 1);
+    if (workSeconds >= 60) {
+      setWorkSeconds(60);
+    }
+  }
+  function lessSeconds() {
+    setWorkSeconds(workSeconds - 1);
+    if (workSeconds <= 0) {
+      setWorkSeconds(0);
+    }
+  }
 
   const totalSeconds = workMinutes * 60 + workSeconds;
   const percentage = Math.round((secondsLeft / totalSeconds) * 100);
@@ -163,7 +193,12 @@ function App() {
                 resetButton={resetButton}
                 setWorkMinutes={setWorkMinutes}
                 setWorkSeconds={setWorkSeconds}
+                lessMinutes={lessMinutes}
+                plusMinutes={plusMinutes}
+                plusSeconds={plusSeconds}
+                lessSeconds={lessSeconds}
                 isPaused={isPaused}
+                isPausedStorage={localStorage.getItem("isPaused")}
                 isPausedRef={localStorage.getItem("isPausedRef")}
                 isPausedRefCurrent={isPausedRef.current}
                 setIsPaused={setIsPaused}
