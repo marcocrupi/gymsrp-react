@@ -56,8 +56,8 @@ function Bmi() {
 
   const calc_total = (newValues) => {
     const { mass, height } = newValues;
-
-    let opBmi = mass / (height * height);
+    let heightQ = height * height;
+    let opBmi = (mass / heightQ) * 10000;
     if (opBmi === Infinity) {
         opBmi=0;
     }
@@ -127,6 +127,7 @@ function Bmi() {
         <div className="radio__bmi">
           <div className="form-check singleRadio__bmi">
             <input
+              name="gender"
               className="form-check-input"
               type="radio"
               name="flexRadioDefault"
@@ -190,7 +191,7 @@ function Bmi() {
             placeholder="0"
             pattern="[0-9]+"
           />
-          <span className="input-group-text">m</span>
+          <span className="input-group-text">cm</span>
         </div>
 
         <div className="bmi__resultBMI">
