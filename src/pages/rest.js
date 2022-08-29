@@ -109,12 +109,14 @@ function Rest(props) {
             <button
               className="rest__presetButton btn btn-warning btn-lg shadow-none"
               onClick={props.button30S}
+              disabled={props.isPausedRef === "false"}
             >
               00:30
             </button>
             <button
               className="rest__presetButton btn btn-warning btn-lg shadow-none"
               onClick={props.button1M}
+              disabled={props.isPausedRef === "false"}
             >
               01:00
             </button>
@@ -127,42 +129,49 @@ function Rest(props) {
             <button
               className="rest__presetButton btn btn-warning btn-lg shadow-none"
               onClick={props.button2M}
+              disabled={props.isPausedRef === "false"}
             >
               02:00
             </button>
             <button
               className="rest__presetButton btn btn-warning btn-lg shadow-none"
               onClick={props.button2M30S}
+              disabled={props.isPausedRef === "false"}
             >
               02:30
             </button>
             <button
               className="rest__presetButton btn btn-warning btn-lg shadow-none"
               onClick={props.button3M}
+              disabled={props.isPausedRef === "false"}
             >
               03:00
             </button>
             <button
               className="rest__presetButton btn btn-warning btn-lg shadow-none"
               onClick={props.button3M30S}
+              disabled={props.isPausedRef === "false"}
             >
               03:30
             </button>
             <button
               className="rest__presetButton btn btn-warning btn-lg shadow-none"
               onClick={props.button4M}
+              disabled={props.isPausedRef === "false"}
             >
               04:00
             </button>
             <button
               className="rest__presetButton btn btn-warning btn-lg shadow-none"
               onClick={props.button4M30S}
+              disabled={props.isPausedRef === "false"}
             >
               04:30
             </button>
             <button
               className="rest__presetButton btn btn-warning btn-lg shadow-none"
               onClick={props.button5M}
+              disabled={props.isPausedRef === "false"}
             >
               05:00
             </button>
