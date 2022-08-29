@@ -163,7 +163,10 @@ function App() {
                 resetButton={resetButton}
                 setWorkMinutes={setWorkMinutes}
                 setWorkSeconds={setWorkSeconds}
+                isPaused={isPaused}
                 isPausedRef={localStorage.getItem("isPausedRef")}
+                isPausedRefCurrent={isPausedRef.current}
+                setIsPaused={setIsPaused}
               />
             }
           />

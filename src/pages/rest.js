@@ -30,9 +30,15 @@ function Rest(props) {
             })}
           />
           <div style={{ marginTop: "10px" }}>
-            <PlayButton onClick={props.playButton} />
-            <PauseButton onClick={props.pauseButton} />
-            <ResetButton onClick={props.resetButton} />
+            {props.isPaused ? (
+              <PlayButton onClick={props.playButton} />
+            ) : (
+              <PauseButton onClick={props.pauseButton} />
+            )}
+            <ResetButton
+              onClick={props.resetButton}
+              disabled={props.isPausedRef === "false"}
+            />
           </div>
         </div>
         <div className="container__label">
