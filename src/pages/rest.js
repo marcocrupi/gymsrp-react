@@ -1,4 +1,4 @@
-import React ,{ useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "../CSS/rest.css";
 import "react-circular-progressbar/dist/styles.css";
@@ -11,8 +11,6 @@ import "../CSS/slider.css";
 const firstColor = "#f0c32d";
 
 function Rest(props) {
-
-
   return (
     <div className="rest__container">
       <div className="rest__components">
@@ -123,6 +121,7 @@ function Rest(props) {
             <button
               className="rest__presetButton btn btn-warning btn-lg shadow-none"
               onClick={props.button1M30S}
+              disabled={props.isPausedRef === "false"}
             >
               01:30
             </button>
