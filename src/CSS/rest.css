@@ -98,22 +98,47 @@
   justify-content: space-between;
 }
 
+.rest__preset::-webkit-scrollbar {
+  height: 5px;
+  display: block;
+}
+
 .rest__presetTitle {
   font-size: 1.2rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .rest__blockPresetButton {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .rest__presetButton {
   margin: 0.4rem;
   font-weight: bold;
+}
+
+.scrollmenu {
+  background-color: #1b1b1b;
+  overflow: auto;
+  white-space: nowrap;
+  display: flex;
+}
+
+.scrollmenu button {
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+.rest__presetButton.btn {
+  color: #1b1b1b;
 }
 
 @media screen and (max-width: 850px) {

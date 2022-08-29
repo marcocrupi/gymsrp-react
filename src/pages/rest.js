@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "../CSS/rest.css";
 import "react-circular-progressbar/dist/styles.css";
@@ -101,9 +101,10 @@ function Rest(props) {
             ></button>
           </div>
         </div>
-        <div className="rest__preset">
-          <div className="rest__presetTitle">PRESET</div>
-          <div className="rest__blockPresetButton">
+        <div className="rest__presetTitle">PRESET</div>
+
+        <div className="rest__preset scrollmenu">
+          <div className="rest__blockPresetButton ">
             <button
               className="rest__presetButton btn btn-warning btn-lg shadow-none"
               onClick={props.button30S}

@@ -53,18 +53,19 @@ body {
 
 /* width */
 ::-webkit-scrollbar {
-  /* width: 10px; */
+  /* width: 5px; */
   display: none;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f0c32d;
+  background: #888;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  
+  background: #f0c32d;
 }
 
 /* Handle on hover */

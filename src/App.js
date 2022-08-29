@@ -10,6 +10,7 @@ import Rm from "./pages/rm";
 import Contact from "./pages/contact";
 import Bmi from "./pages/bmi";
 import Beep from "./sounds/Bleep-SoundBible.com-1927126940.mp3";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [audio] = useState(new Audio(Beep));
