@@ -107,7 +107,11 @@ function App() {
         return resetMode();
       }
       if (localStorage.getItem("isPausedRef") === "false") {
+        console.log("tick");
         tick();
+         if (secondsLeftRef.current === 0) {
+           return resetMode();
+         }
       }
     }, 1000);
 

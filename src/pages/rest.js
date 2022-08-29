@@ -33,7 +33,10 @@ function Rest(props) {
           </div>
           <div style={{ marginTop: "10px" }}>
             {props.isPausedRef === "true" ? (
-              <PlayButton onClick={props.playButton} />
+              <PlayButton
+                onClick={props.playButton}
+                disabled={props.secondsLeftRef === 0}
+              />
             ) : (
               <PauseButton onClick={props.pauseButton} />
             )}

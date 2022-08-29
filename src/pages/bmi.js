@@ -130,7 +130,6 @@ function Bmi() {
               name="gender"
               className="form-check-input"
               type="radio"
-              name="flexRadioDefault"
               id="flexRadioDefault1"
               onChange={male}
             />
@@ -140,9 +139,9 @@ function Bmi() {
           </div>
           <div className="form-check singleRadio__bmi">
             <input
+              name="gender"
               className="form-check-input"
               type="radio"
-              name="flexRadioDefault"
               id="flexRadioDefault2"
               onChange={female}
             />
