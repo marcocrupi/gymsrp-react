@@ -72,6 +72,7 @@
   position: relative;
   box-shadow: 0px 0px 5px #ffffff;
   border-radius: 50%;
+  white-space: nowrap;
 }
 
 .supportSlider:before,
@@ -95,6 +96,24 @@
   justify-content: space-between;
 }
 
+.rest__presetTitle {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.rest__blockPresetButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.rest__presetButton {
+  margin: 0.4rem;
+  font-weight: bold;
+}
+
 @media screen and (max-width: 850px) {
   .rest__container {
   align-items: flex-start;
@@ -108,7 +127,7 @@
 }
 
 .rest__components {
-  width: auto;
+  width: 80%;
 }
 
 .control__button {

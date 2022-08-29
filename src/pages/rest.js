@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{ useState,useEffect } from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "../CSS/rest.css";
 import "react-circular-progressbar/dist/styles.css";
@@ -11,6 +11,8 @@ import "../CSS/slider.css";
 const firstColor = "#f0c32d";
 
 function Rest(props) {
+
+
   return (
     <div className="rest__container">
       <div className="rest__components">
@@ -54,6 +56,7 @@ function Rest(props) {
             <button
               className="supportSlider"
               onClick={props.lessMinutes}
+              disabled={props.isPausedRef === "false"}
             ></button>
             <ReactSlider
               className={"slider"}
@@ -68,6 +71,7 @@ function Rest(props) {
             <button
               className="supportSlider plus"
               onClick={props.plusMinutes}
+              disabled={props.isPausedRef === "false"}
             ></button>
           </div>
           <label className="settings__label">
@@ -80,6 +84,7 @@ function Rest(props) {
             <button
               className="supportSlider"
               onClick={props.lessSeconds}
+              disabled={props.isPausedRef === "false"}
             ></button>
             <ReactSlider
               className={"slider"}
@@ -94,7 +99,73 @@ function Rest(props) {
             <button
               className="supportSlider plus"
               onClick={props.plusSeconds}
+              disabled={props.isPausedRef === "false"}
             ></button>
+          </div>
+        </div>
+        <div className="rest__preset">
+          <div className="rest__presetTitle">PRESET</div>
+          <div className="rest__blockPresetButton">
+            <button
+              className="rest__presetButton btn btn-warning btn-lg shadow-none"
+              onClick={props.button30S}
+            >
+              00:30
+            </button>
+            <button
+              className="rest__presetButton btn btn-warning btn-lg shadow-none"
+              onClick={props.button1M}
+            >
+              01:00
+            </button>
+            <button
+              className="rest__presetButton btn btn-warning btn-lg shadow-none"
+              onClick={props.button1M30S}
+            >
+              01:30
+            </button>
+            <button
+              className="rest__presetButton btn btn-warning btn-lg shadow-none"
+              onClick={props.button2M}
+            >
+              02:00
+            </button>
+            <button
+              className="rest__presetButton btn btn-warning btn-lg shadow-none"
+              onClick={props.button2M30S}
+            >
+              02:30
+            </button>
+            <button
+              className="rest__presetButton btn btn-warning btn-lg shadow-none"
+              onClick={props.button3M}
+            >
+              03:00
+            </button>
+            <button
+              className="rest__presetButton btn btn-warning btn-lg shadow-none"
+              onClick={props.button3M30S}
+            >
+              03:30
+            </button>
+            <button
+              className="rest__presetButton btn btn-warning btn-lg shadow-none"
+              onClick={props.button4M}
+            >
+              04:00
+            </button>
+            <button
+              className="rest__presetButton btn btn-warning btn-lg shadow-none"
+              onClick={props.button4M30S}
+            >
+              04:30
+            </button>
+            <button
+              className="rest__presetButton btn btn-warning btn-lg shadow-none"
+              onClick={props.button5M}
+            >
+              05:00
+            </button>
           </div>
         </div>
       </div>

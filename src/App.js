@@ -111,9 +111,6 @@ function App() {
     }, 1000);
 
     return () => clearInterval(interval);
-
-    
-
   }, [workMinutes, workSeconds, audio]);
 
   function plusMinutes() {
@@ -140,6 +137,58 @@ function App() {
     if (workSeconds <= 0) {
       setWorkSeconds(0);
     }
+  }
+
+  function button30S() {
+    setWorkSeconds(30);
+
+    setWorkMinutes(0);
+  }
+
+  function button1M() {
+    setWorkMinutes(1);
+
+    setWorkSeconds(0);
+  }
+
+  function button1M30S() {
+    setWorkMinutes(1);
+    setWorkSeconds(30);
+  }
+
+  function button2M() {
+    setWorkMinutes(2);
+    setWorkSeconds(0);
+  }
+
+  function button2M30S() {
+    setWorkMinutes(2);
+    setWorkSeconds(30);
+  }
+
+  function button3M() {
+    setWorkMinutes(3);
+    setWorkSeconds(0);
+  }
+
+  function button3M30S() {
+    setWorkMinutes(3);
+    setWorkSeconds(30);
+  }
+
+  function button4M() {
+    setWorkMinutes(4);
+    setWorkSeconds(0);
+  }
+
+  function button4M30S() {
+    setWorkMinutes(4);
+    setWorkSeconds(30);
+  }
+
+  function button5M() {
+    setWorkMinutes(5);
+    setWorkSeconds(0);
   }
 
   const totalSeconds = workMinutes * 60 + workSeconds;
@@ -197,6 +246,16 @@ function App() {
                 plusMinutes={plusMinutes}
                 plusSeconds={plusSeconds}
                 lessSeconds={lessSeconds}
+                button30S={button30S}
+                button1M={button1M}
+                button1M30S={button1M30S}
+                button2M={button2M}
+                button2M30S={button2M30S}
+                button3M={button3M}
+                button3M30S={button3M30S}
+                button4M={button4M}
+                button4M30S={button4M30S}
+                button5M={button5M}
                 isPaused={isPaused}
                 isPausedStorage={localStorage.getItem("isPaused")}
                 isPausedRef={localStorage.getItem("isPausedRef")}
