@@ -5,11 +5,13 @@
   color: #eee;
   height: 100%;
   overflow: scroll;
+  min-height: calc(100vh - 120px);
 }
 
 .rest__components {
-  width: 300px;
+  width: 600px;
   text-align: center;
+  margin: 2rem 0;
 }
 
 .rest__circularandbuttons {
@@ -116,36 +118,35 @@
 
 @media screen and (max-width: 850px) {
   .rest__container {
-  align-items: flex-start;
-  width: 100%;
-}
+    align-items: center;
+    width: 100%;
+  }
 
-.rest__circularprogressbar {
-  display: flex;
-  justify-content: center;
-  width: 200px;
-}
+  .rest__circularprogressbar {
+    display: flex;
+    justify-content: center;
+    width: 200px;
+  }
 
-.rest__components {
-  width: 80%;
-}
+  .rest__components {
+    width: 80%;
+  }
 
-.control__button {
-  background-color: transparent;
-  color: rgba(255, 255, 255, 0.8);
-  border: 0;
-  display: inline-block;
-  width: 60px;
-  cursor: pointer;
-}
+  .control__button {
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.8);
+    border: 0;
+    display: inline-block;
+    width: 60px;
+    cursor: pointer;
+  }
 
-.settings__label {
-  font-size: 1.2rem;
-  letter-spacing: 1px;
-}
+  .settings__label {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
 
-.rest__timerSettings {
-  color: #f0c32d;
-}
-
+  .rest__timerSettings {
+    color: #f0c32d;
+  }
 }

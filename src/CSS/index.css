@@ -36,8 +36,9 @@ body {
 
 .global__title {
   font-size: 3rem;
-  margin-bottom: 1rem;
   margin: 0 2rem;
+  margin-bottom: 1rem;
+  
   color: #f0c32d;
   font-weight: bold;
   letter-spacing: 2px;

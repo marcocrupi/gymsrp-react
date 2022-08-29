@@ -4,6 +4,7 @@
   align-items: center;
   height: 100%;
   overflow: scroll;
+  min-height: calc(100vh - 120px);
 }
 
 .percentage__components {
