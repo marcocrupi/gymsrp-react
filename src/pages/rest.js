@@ -39,7 +39,11 @@ function Rest(props) {
             )}
             <ResetButton
               onClick={props.resetButton}
-              disabled={props.isPausedRef === "false"}
+              style={
+                props.isPausedRef === "false"
+                  ? { display: "none" }
+                  : { display: "inline-block" }
+              }
             />
           </div>
         </div>

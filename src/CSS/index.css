@@ -38,7 +38,6 @@ body {
   font-size: 3rem;
   margin: 0 2rem;
   margin-bottom: 1rem;
-  
   color: #f0c32d;
   font-weight: bold;
   letter-spacing: 2px;
@@ -64,7 +63,6 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  
   background: #f0c32d;
 }
 
