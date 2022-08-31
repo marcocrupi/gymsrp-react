@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "../CSS/rest.css";
 import "react-circular-progressbar/dist/styles.css";
@@ -11,8 +11,11 @@ import "../CSS/slider.css";
 const firstColor = "#f0c32d";
 
 function Rest(props) {
-  const [newButton, setNewButton] = useState([]);
-  const [transformTime,setTransformTime] = useState(0)
+  const [newButton, setNewButton] = useState(
+    JSON.parse(localStorage.getItem("newButton")) || []
+  );
+
+  localStorage.setItem("newButton", JSON.stringify(newButton));
 
   const deleteButton = (index) => {
     const removeList = [...newButton];
@@ -22,17 +25,17 @@ function Rest(props) {
 
   const addButton = () => {
     const timerScreen = props.minutes + ":" + props.seconds;
-    const realTime = props.secondsLeftRef;
     const realMinutes = props.workMinutes;
     const realSeconds = props.workSeconds;
-    setNewButton([
+    const newItems = [
       ...newButton,
       {
         button: timerScreen,
         realminutes: realMinutes,
         realseconds: realSeconds,
       },
-    ]);
+    ];
+    setNewButton(newItems);
   };
 
   const handleClick = (e, index) => {
@@ -41,7 +44,6 @@ function Rest(props) {
     props.setWorkMinutes(valueMinutes);
     props.setWorkSeconds(valueSeconds);
   };
-  
 
   return (
     <div className="rest__container">
@@ -141,7 +143,6 @@ function Rest(props) {
           </div>
         </div>
 
-        <div className="rest__presetTitle">CUSTOM PRESET</div>
         <div className="rest__saveTimerButtonBlock">
           {newButton.length - 1 <= 4 && (
             <button
@@ -152,11 +153,13 @@ function Rest(props) {
             </button>
           )}
         </div>
+        <div className="rest__presetTitle">CUSTOM PRESET</div>
         <div className="rest__preset scrollmenu">
           <div className="rest__blockPresetButton ">
             {newButton.map((singleButton, index) => (
               <div key={index} className="rest__containerCustom">
                 <button
+                  disabled={props.isPausedRef === "false"}
                   onClick={() => deleteButton(index)}
                   className="rest__deletePreset btn btn-danger btn-lg shadow-none"
                 >
@@ -167,6 +170,7 @@ function Rest(props) {
                   className="rest__presetButton btn btn-warning btn-lg shadow-none"
                   value={props.secondsLeftRef}
                   onClick={(e) => handleClick(e, index)}
+                  disabled={props.isPausedRef === "false"}
                 >
                   <div>{singleButton.button}</div>
                 </button>
