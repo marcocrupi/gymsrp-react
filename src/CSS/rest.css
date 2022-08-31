@@ -118,11 +118,6 @@
   flex-wrap: nowrap;
 }
 
-.rest__presetButton {
-  margin: 0.4rem;
-  font-weight: bold;
-}
-
 .scrollmenu {
   background-color: #1b1b1b;
   overflow: auto;
@@ -138,9 +133,33 @@
 }
 
 .rest__presetButton.btn {
+  margin: 0.4rem;
+  margin-right: 1rem;
+  font-weight: bold;
   color: #1b1b1b;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.rest__saveTimerButtonBlock {
+  margin-bottom: 1rem;
+}
+
+.rest__saveTimerButton {
+  border-radius: 30px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.rest__deletePreset {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 30px;
+}
 
 
 @media screen and (max-width: 850px) {

@@ -12,7 +12,7 @@ const firstColor = "#f0c32d";
 
 function Rest(props) {
   const [newButton, setNewButton] = useState([]);
-  
+
   const deleteButton = (index) => {
     const removeList = [...newButton];
     removeList.splice(index, 1);
@@ -130,39 +130,36 @@ function Rest(props) {
         </div>
 
         <div className="rest__presetTitle">CUSTOM PRESET</div>
-
+        <div className="rest__saveTimerButtonBlock">
+          {newButton.length - 1 <= 4 && (
+            <button
+              className="rest__saveTimerButton btn btn-danger btn-lg shadow-none"
+              onClick={addButton}
+            >
+              SAVE TIMER
+            </button>
+          )}
+        </div>
         <div className="rest__preset scrollmenu">
           <div className="rest__blockPresetButton ">
-            <div>
-              <div>
-                {newButton.length - 1 <= 4 && (
-                  <button
-                    className="btn btn-danger btn-lg shadow-none"
-                    onClick={addButton}
-                  >
-                    SAVE TIMER
-                  </button>
-                )}
-              </div>
-              {newButton.map((singleButton, index) => (
-                <div key={index} className="rest__containerCustom">
-                  <button
-                    className="rest__presetButton btn btn-warning btn-lg shadow-none"
-                    value={`${props.workMinutes}:${props.workSeconds}`}
-                    onClick={(e) => handleClick(e, index)}
-                  >
-                    <div>{singleButton.button}</div>
-                  </button>
+            {newButton.map((singleButton, index) => (
+              <div key={index} className="rest__containerCustom">
+                <button
+                  onClick={() => deleteButton(index)}
+                  className="rest__deletePreset btn btn-danger btn-lg shadow-none"
+                >
+                  -
+                </button>
 
-                  <button
-                    onClick={() => deleteButton(index)}
-                    className="rest__presetButton btn btn-danger btn-lg shadow-none"
-                  >
-                    delete
-                  </button>
-                </div>
-              ))}
-            </div>
+                <button
+                  className="rest__presetButton btn btn-warning btn-lg shadow-none"
+                  value={`${props.workMinutes}:${props.workSeconds}`}
+                  onClick={(e) => handleClick(e, index)}
+                >
+                  <div>{singleButton.button}</div>
+                </button>
+              </div>
+            ))}
           </div>
         </div>
 
