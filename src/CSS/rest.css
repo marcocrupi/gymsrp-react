@@ -6,6 +6,7 @@
   height: 100%;
   overflow: scroll;
   min-height: calc(100vh - 120px);
+  padding-bottom: 2rem;
 }
 
 .rest__components {
