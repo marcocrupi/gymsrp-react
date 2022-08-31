@@ -149,7 +149,7 @@ function Rest(props) {
               className="rest__saveTimerButton btn btn-danger btn-lg shadow-none"
               onClick={addButton}
             >
-              SAVE TIMER
+              <ion-icon name="save-outline"></ion-icon>{" "}
             </button>
           )}
         </div>
@@ -166,7 +166,7 @@ function Rest(props) {
                   onClick={() => deleteButton(index)}
                   className="rest__deletePreset btn btn-danger btn-lg shadow-none"
                 >
-                  -
+                  X
                 </button>
 
                 <button
