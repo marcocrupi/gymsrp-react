@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "../CSS/rest.css";
 import "react-circular-progressbar/dist/styles.css";
@@ -11,6 +11,26 @@ import "../CSS/slider.css";
 const firstColor = "#f0c32d";
 
 function Rest(props) {
+  const [newButton, setNewButton] = useState([]);
+  
+  const deleteButton = (index) => {
+    const removeList = [...newButton];
+    removeList.splice(index, 1);
+    setNewButton(removeList);
+  };
+
+  const addButton = () => {
+    const timerScreen = props.minutes + ":" + props.seconds;
+    setNewButton([...newButton, { button: timerScreen }]);
+  };
+
+  const handleClick = (e, index) => {
+    const { value } = e.target;
+    const list = [...newButton];
+    list[index] = value;
+    console.log(list);
+  };
+
   return (
     <div className="rest__container">
       <div className="rest__components">
@@ -108,6 +128,44 @@ function Rest(props) {
             ></button>
           </div>
         </div>
+
+        <div className="rest__presetTitle">CUSTOM PRESET</div>
+
+        <div className="rest__preset scrollmenu">
+          <div className="rest__blockPresetButton ">
+            <div>
+              <div>
+                {newButton.length - 1 <= 4 && (
+                  <button
+                    className="btn btn-danger btn-lg shadow-none"
+                    onClick={addButton}
+                  >
+                    SAVE TIMER
+                  </button>
+                )}
+              </div>
+              {newButton.map((singleButton, index) => (
+                <div key={index} className="rest__containerCustom">
+                  <button
+                    className="rest__presetButton btn btn-warning btn-lg shadow-none"
+                    value={`${props.workMinutes}:${props.workSeconds}`}
+                    onClick={(e) => handleClick(e, index)}
+                  >
+                    <div>{singleButton.button}</div>
+                  </button>
+
+                  <button
+                    onClick={() => deleteButton(index)}
+                    className="rest__presetButton btn btn-danger btn-lg shadow-none"
+                  >
+                    delete
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         <div className="rest__presetTitle">PRESET</div>
 
         <div className="rest__preset scrollmenu">

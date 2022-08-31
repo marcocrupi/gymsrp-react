@@ -141,6 +141,8 @@
   color: #1b1b1b;
 }
 
+
+
 @media screen and (max-width: 850px) {
   .rest__container {
     align-items: center;

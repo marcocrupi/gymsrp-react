@@ -245,6 +245,8 @@ function App() {
                 playButton={playButton}
                 pauseButton={pauseButton}
                 resetButton={resetButton}
+                workMinutes={workMinutes}
+                workSeconds={workSeconds}
                 setWorkMinutes={setWorkMinutes}
                 setWorkSeconds={setWorkSeconds}
                 lessMinutes={lessMinutes}
