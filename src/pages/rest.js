@@ -144,7 +144,7 @@ function Rest(props) {
         </div>
 
         <div className="rest__saveTimerButtonBlock">
-          {newButton.length - 1 <= 4 && (
+          {newButton.length - 1 <= 8 && (
             <button
               className="rest__saveTimerButton btn btn-danger btn-lg shadow-none"
               onClick={addButton}
@@ -153,7 +153,10 @@ function Rest(props) {
             </button>
           )}
         </div>
-        <div className="rest__presetTitle">CUSTOM PRESET</div>
+        {newButton.length > 0 && (
+          <div className="rest__presetTitle">CUSTOM PRESET</div>
+        )}
+
         <div className="rest__preset scrollmenu">
           <div className="rest__blockPresetButton ">
             {newButton.map((singleButton, index) => (
