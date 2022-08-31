@@ -239,6 +239,7 @@ function App() {
             element={
               <Rest
                 secondsLeftRef={secondsLeftRef.current}
+                setSecondsLeft={setSecondsLeft}
                 percentage={percentage}
                 minutes={minutes}
                 seconds={seconds}

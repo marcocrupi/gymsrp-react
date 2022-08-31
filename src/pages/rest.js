@@ -12,6 +12,7 @@ const firstColor = "#f0c32d";
 
 function Rest(props) {
   const [newButton, setNewButton] = useState([]);
+  const [transformTime,setTransformTime] = useState(0)
 
   const deleteButton = (index) => {
     const removeList = [...newButton];
@@ -21,15 +22,26 @@ function Rest(props) {
 
   const addButton = () => {
     const timerScreen = props.minutes + ":" + props.seconds;
-    setNewButton([...newButton, { button: timerScreen }]);
+    const realTime = props.secondsLeftRef;
+    const realMinutes = props.workMinutes;
+    const realSeconds = props.workSeconds;
+    setNewButton([
+      ...newButton,
+      {
+        button: timerScreen,
+        realminutes: realMinutes,
+        realseconds: realSeconds,
+      },
+    ]);
   };
 
   const handleClick = (e, index) => {
-    const { value } = e.target;
-    const list = [...newButton];
-    list[index] = value;
-    console.log(list);
+    let valueMinutes = newButton[index].realminutes;
+    let valueSeconds = newButton[index].realseconds;
+    props.setWorkMinutes(valueMinutes);
+    props.setWorkSeconds(valueSeconds);
   };
+  
 
   return (
     <div className="rest__container">
@@ -153,7 +165,7 @@ function Rest(props) {
 
                 <button
                   className="rest__presetButton btn btn-warning btn-lg shadow-none"
-                  value={`${props.workMinutes}:${props.workSeconds}`}
+                  value={props.secondsLeftRef}
                   onClick={(e) => handleClick(e, index)}
                 >
                   <div>{singleButton.button}</div>
