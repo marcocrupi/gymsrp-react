@@ -27,7 +27,7 @@ function Rest(props) {
     const timerScreen = props.minutes + ":" + props.seconds;
     const realMinutes = props.workMinutes;
     const realSeconds = props.workSeconds;
-    const newItems = [
+    let newItems = [
       ...newButton,
       {
         button: timerScreen,
@@ -35,7 +35,18 @@ function Rest(props) {
         realseconds: realSeconds,
       },
     ];
-    setNewButton(newItems);
+
+    const uniqueArray = newItems.filter((value, index) => {
+      const _value = JSON.stringify(value);
+      return (
+        index ===
+        newItems.findIndex((obj) => {
+          return JSON.stringify(obj) === _value;
+        })
+      );
+    });
+    
+    setNewButton(uniqueArray);
   };
 
   const handleClick = (e, index) => {

@@ -138,7 +138,7 @@
   margin: 0.4rem;
   margin-right: 1rem;
   height: 3rem;
-  border-radius: 30px;
+  border-radius: 10px;
   border: 3px solid #f0c32d;
   background-color: #eee;
   font-weight: bold;
@@ -157,8 +157,8 @@
 
 .rest__saveTimerButton {
   border-radius: 50px;
-  height: 5rem;
-  width: 5rem;
+  height: 4rem;
+  width: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
