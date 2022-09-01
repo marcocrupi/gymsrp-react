@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../CSS/bmi.css";
 
 function Bmi() {
@@ -19,9 +19,7 @@ function Bmi() {
   const radioFemale = useRef(false);
 
   const [sex, setSex] = useState(
-    localStorage.getItem("sex") === true
-      ? ""
-      : localStorage.getItem("sex")
+    localStorage.getItem("sex") === true ? "" : localStorage.getItem("sex")
   );
 
   const [category, setCategory] = useState(
@@ -62,10 +60,10 @@ function Bmi() {
     let heightQ = height * height;
     let opBmi = (mass / heightQ) * 10000;
     if (opBmi === Infinity) {
-        opBmi=0;
+      opBmi = 0;
     }
     const newTotal = opBmi.toFixed(1);
-    
+
     setTotalBmi(newTotal);
   };
 
@@ -84,12 +82,24 @@ function Bmi() {
   };
 
   useEffect(() => {
-
     if (sex === true && totalBmi === 0) {
       return setCategory("");
     }
-
     if (sex === false && totalBmi === 0) {
+      return setCategory("");
+    }
+    if (sex === true && totalBmi === null) {
+      return setCategory("");
+    }
+
+    if (sex === false && totalBmi === null) {
+      return setCategory("");
+    }
+    if (sex === true && totalBmi === undefined) {
+      return setCategory("");
+    }
+
+    if (sex === false && totalBmi === undefined) {
       return setCategory("");
     }
 
@@ -141,7 +151,7 @@ function Bmi() {
         <div className="radio__bmi">
           <div className="form-check singleRadio__bmi">
             <input
-            ref={radioMale}
+              ref={radioMale}
               name="gender"
               className="form-check-input"
               type="radio"
@@ -154,7 +164,7 @@ function Bmi() {
           </div>
           <div className="form-check singleRadio__bmi">
             <input
-            ref={radioFemale}
+              ref={radioFemale}
               name="gender"
               className="form-check-input"
               type="radio"
