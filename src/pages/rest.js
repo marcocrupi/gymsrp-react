@@ -159,6 +159,7 @@ function Rest(props) {
             <button
               className="rest__saveTimerButton btn btn-danger btn-lg shadow-none"
               onClick={addButton}
+              disabled={props.isPausedRef === "false"}
             >
               <ion-icon name="save-outline"></ion-icon>{" "}
             </button>
