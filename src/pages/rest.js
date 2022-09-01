@@ -36,7 +36,7 @@ function Rest(props) {
       },
     ];
 
-    const uniqueArray = newItems.filter((value, index) => {
+    let uniqueArray = newItems.filter((value, index) => {
       const _value = JSON.stringify(value);
       return (
         index ===
@@ -44,6 +44,10 @@ function Rest(props) {
           return JSON.stringify(obj) === _value;
         })
       );
+    });
+
+    uniqueArray = uniqueArray.filter(function (obj) {
+      return obj.button !== "0:00";
     });
     
     setNewButton(uniqueArray);
