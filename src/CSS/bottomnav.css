@@ -30,7 +30,7 @@
   .bottomnav__navigation ul {
     margin: auto 0;
     display: flex;
-    width: 350px;
+    width: 300px;
     padding: 0;
   }
 
@@ -136,10 +136,6 @@
 
   .bottomnav__navigation ul li:nth-child(5).active ~ .bottomnav__indicator {
     transform: translateX(calc(58px * 4));
-  }
-
-  .bottomnav__navigation ul li:nth-child(6).active ~ .bottomnav__indicator {
-    transform: translateX(calc(58px * 5));
   }
 }
 

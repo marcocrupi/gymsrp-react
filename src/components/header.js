@@ -30,11 +30,6 @@ document.onclick = function (e) {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/gymsrp-react/set" className="header__link">
-              Set
-            </NavLink>
-          </li>
-          <li>
             <NavLink to="/gymsrp-react/percentage" className="header__link">
               Percentage
             </NavLink>
@@ -64,9 +59,6 @@ document.onclick = function (e) {
           <div className="header__links">
             <NavLink to="/gymsrp-react" className="header__link">
               Rest
-            </NavLink>
-            <NavLink to="/gymsrp-react/set" className="header__link">
-              Set
             </NavLink>
             <NavLink to="/gymsrp-react/percentage" className="header__link">
               Percentage

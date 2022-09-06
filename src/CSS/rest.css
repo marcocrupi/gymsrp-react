@@ -15,6 +15,10 @@
   margin: 2rem 0;
 }
 
+.rest__timer__set {
+  display: flex;
+}
+
 .rest__circularandbuttons {
   display: flex;
   justify-content: center;

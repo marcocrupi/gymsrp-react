@@ -3,7 +3,6 @@ import { useState, useEffect, useRef } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SharedLayout from "./pages/sharedlayout";
 import swal from "sweetalert";
-import Set from "./pages/set";
 import Rest from "./pages/rest";
 import Percentage from "./pages/percentage";
 import Rm from "./pages/rm";
@@ -272,7 +271,6 @@ function App() {
               />
             }
           />
-          <Route path="/gymsrp-react/set" element={<Set />} />
           <Route path="/gymsrp-react/percentage" element={<Percentage />} />
           <Route path="/gymsrp-react/rm" element={<Rm />} />
           <Route path="/gymsrp-react/bmi" element={<Bmi />} />

@@ -25,13 +25,6 @@ function Bottomnav({ to, ...props }) {
             <span className="bottomnav__text">Timer</span>
           </CustomLink>
 
-          <CustomLink to="/gymsrp-react/set" className="bottomnav__link">
-            <span className="bottomnav__icon">
-              <ion-icon name="add-circle-outline"></ion-icon>
-            </span>
-            <span className="bottomnav__text">Set</span>
-          </CustomLink>
-
           <CustomLink to="/gymsrp-react/percentage" className="bottomnav__link">
             <span className="bottomnav__icon">
               <ion-icon name="calculator-outline"></ion-icon>

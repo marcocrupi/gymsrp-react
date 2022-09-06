@@ -7,6 +7,7 @@ import PauseButton from "../components/pausebutton";
 import ResetButton from "../components/resetbutton";
 import ReactSlider from "react-slider";
 import "../CSS/slider.css";
+import SetComponent from "../components/setC";
 
 const firstColor = "#f0c32d";
 
@@ -49,7 +50,7 @@ function Rest(props) {
     uniqueArray = uniqueArray.filter(function (obj) {
       return obj.button !== "0:00";
     });
-    
+
     setNewButton(uniqueArray);
   };
 
@@ -64,6 +65,7 @@ function Rest(props) {
     <div className="rest__container">
       <div className="rest__components">
         <div className="global__title">REST</div>
+
         <div className="rest__circularandbuttons">
           <div className="rest__circularprogressbar">
             <CircularProgressbar
@@ -99,6 +101,8 @@ function Rest(props) {
             />
           </div>
         </div>
+        <SetComponent />
+
         <div className="container__label">
           <label className="settings__label">
             minutes:{" "}
