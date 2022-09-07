@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 
-function PlayButton( props ) {
+function PlayButton(props) {
   return (
     <button {...props} id="playB" className="control__button play__button">
       <svg
@@ -19,4 +19,4 @@ function PlayButton( props ) {
   );
 }
 
-export default PlayButton
+export default PlayButton;

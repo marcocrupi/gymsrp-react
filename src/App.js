@@ -8,12 +8,13 @@ import Percentage from "./pages/percentage";
 import Rm from "./pages/rm";
 import Contact from "./pages/contact";
 import Bmi from "./pages/bmi";
-import Beep from "./sounds/Bleep-SoundBible.com-1927126940.mp3";
+import Beep from "./sounds/compress-audio-alarm.mp3";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [audio] = useState(new Audio(Beep));
   audio.autoplay = true;
+  audio.loop = true;
   const [workMinutes, setWorkMinutes] = useState(
     isNaN(parseInt(localStorage.getItem("SettingsInfoWorkMinutes")))
       ? 0
@@ -43,8 +44,6 @@ function App() {
   const secondsLeftRef = useRef(secondsLeft);
   const isPausedRef = useRef(isPaused);
 
- 
-
   // CONSOLE LOG - START
 
   // console.log("isPaused", isPaused);
@@ -60,8 +59,6 @@ function App() {
   localStorage.setItem("isPausedRef", isPausedRef.current);
   localStorage.setItem("secondsLeftRef", secondsLeftRef.current);
 
-
-
   // LOCAL STORAGE SET ITEM - END
 
   function tick() {
@@ -70,7 +67,6 @@ function App() {
     setSecondsLeft(secondsLeftRef.current);
     console.log("secondsLeft", secondsLeftRef.current);
   }
-
 
   // SET COUNTER - START
 
@@ -96,7 +92,6 @@ function App() {
 
   // SET COUNTER - END
 
-
   useEffect(() => {
     function resetMode() {
       setWorkMinutes(0);
@@ -110,7 +105,19 @@ function App() {
         localStorage.getItem("isPausedRef") === "false"
       ) {
         audio.play();
-        swal("Time out!", "", "success");
+        swal("Time out!", "", "success", {
+          buttons: {
+            ok: "ok"
+          },
+        }).then((value) => {
+          switch (value) {
+            case "ok":
+              audio.loop=false;
+              break;
+            default:
+              audio.loop = false;
+          }
+        });
       }
       if (
         secondsLeftRef.current === 0 &&
