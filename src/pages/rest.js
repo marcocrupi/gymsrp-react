@@ -90,7 +90,6 @@ function Rest(props) {
             />
           </div>
           <div style={{ marginTop: "10px" }} className="rest__buttons__control">
-            <div onClick={handleClickAudio} className="rest__mute__control">{buttonText}</div>
             {props.isPausedRef === "true" ? (
               <PlayButton
                 onClick={props.playButton}
@@ -99,6 +98,9 @@ function Rest(props) {
             ) : (
               <PauseButton onClick={props.pauseButton} />
             )}
+            <div onClick={handleClickAudio} className="rest__mute__control">
+              {buttonText}
+            </div>
             <ResetButton
               onClick={props.resetButton}
               style={
