@@ -9,6 +9,17 @@
   padding-bottom: 1.5rem;
 }
 
+.rest__buttons__control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rest__mute__control {
+  font-size: 5rem;
+  cursor: pointer;
+}
+
 .rest__components {
   width: 600px;
   text-align: center;

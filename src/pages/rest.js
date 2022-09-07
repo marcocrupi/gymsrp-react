@@ -60,6 +60,13 @@ function Rest(props) {
     props.setWorkMinutes(valueMinutes);
     props.setWorkSeconds(valueSeconds);
   };
+ 
+  const [buttonText, setButtonText] = useState("🔊");
+
+  function handleClickAudio() {
+    props.audio.muted = !props.audio.muted;
+    buttonText === "🔇" ? setButtonText("🔊") : setButtonText("🔇");
+  }
 
   return (
     <div className="rest__container">
@@ -82,7 +89,8 @@ function Rest(props) {
               })}
             />
           </div>
-          <div style={{ marginTop: "10px" }}>     
+          <div style={{ marginTop: "10px" }} className="rest__buttons__control">
+            <div onClick={handleClickAudio} className="rest__mute__control">{buttonText}</div>
             {props.isPausedRef === "true" ? (
               <PlayButton
                 onClick={props.playButton}
