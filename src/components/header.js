@@ -3,22 +3,20 @@ import { NavLink } from "react-router-dom";
 import "../CSS/header.css";
 
 function Header() {
+  const toggle = useRef(null);
+  const navbar = useRef(null);
 
-   const toggle = useRef(null);
-   const navbar = useRef(null);
- 
-document.onclick = function (e) {
-  if (e.target.id !== "toggle" && e.target.id !== "navbar") {
-    toggle.current.classList.remove("active");
-    navbar.current.classList.remove("active");
-  }
-}; 
- 
- const activeMenu = () => {
-   toggle.current.classList.toggle("active");
-   navbar.current.classList.toggle("active");
- };
- 
+  document.onclick = function (e) {
+    if (e.target.id !== "toggle" && e.target.id !== "navbar") {
+      toggle.current.classList.remove("active");
+      navbar.current.classList.remove("active");
+    }
+  };
+
+  const activeMenu = () => {
+    toggle.current.classList.toggle("active");
+    navbar.current.classList.toggle("active");
+  };
 
   return (
     <>

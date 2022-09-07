@@ -15,6 +15,7 @@ function App() {
   const [audio] = useState(new Audio(Beep));
   audio.autoplay = true;
   audio.loop = true;
+
   const [workMinutes, setWorkMinutes] = useState(
     isNaN(parseInt(localStorage.getItem("SettingsInfoWorkMinutes")))
       ? 0
@@ -107,15 +108,15 @@ function App() {
         audio.play();
         swal("Time out!", "", "success", {
           buttons: {
-            ok: "ok"
+            ok: "Ok",
           },
         }).then((value) => {
           switch (value) {
-            case "ok":
-              audio.loop=false;
+            case "Ok":
+              audio.pause();
               break;
             default:
-              audio.loop = false;
+              audio.pause();
           }
         });
       }
@@ -159,7 +160,7 @@ function App() {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [workMinutes, workSeconds, audio]);
+  }, [workMinutes, workSeconds, audio, autoSet]);
 
   function plusMinutes() {
     setWorkMinutes(workMinutes + 1);
@@ -313,6 +314,7 @@ function App() {
                 add={add}
                 less={less}
                 autoSet={autoSet}
+                audio={audio}
                 setAutoSet={setAutoSet}
                 isPausedStorage={localStorage.getItem("isPaused")}
                 isPausedRef={localStorage.getItem("isPausedRef")}
