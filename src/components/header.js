@@ -58,7 +58,7 @@ document.onclick = function (e) {
           </div>
           <div className="header__links">
             <NavLink to="/gymsrp-react" className="header__link">
-              Rest
+              Rest & Set
             </NavLink>
             <NavLink to="/gymsrp-react/percentage" className="header__link">
               Percentage

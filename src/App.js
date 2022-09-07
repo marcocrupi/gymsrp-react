@@ -43,6 +43,8 @@ function App() {
   const secondsLeftRef = useRef(secondsLeft);
   const isPausedRef = useRef(isPaused);
 
+ 
+
   // CONSOLE LOG - START
 
   // console.log("isPaused", isPaused);
@@ -58,6 +60,8 @@ function App() {
   localStorage.setItem("isPausedRef", isPausedRef.current);
   localStorage.setItem("secondsLeftRef", secondsLeftRef.current);
 
+
+
   // LOCAL STORAGE SET ITEM - END
 
   function tick() {
@@ -66,6 +70,32 @@ function App() {
     setSecondsLeft(secondsLeftRef.current);
     console.log("secondsLeft", secondsLeftRef.current);
   }
+
+
+  // SET COUNTER - START
+
+  const [counter, setCounter] = useState(
+    parseInt(localStorage.getItem("counter"))
+  );
+
+  const [autoSet, setAutoSet] = useState(false);
+  console.log(autoSet);
+
+  localStorage.setItem("counter", counter);
+
+  const add = () => {
+    setCounter(parseInt(localStorage.getItem("counter")) + 1);
+  };
+
+  const less = () => {
+    setCounter(parseInt(localStorage.getItem("counter")) - 1);
+    if (counter <= 0) {
+      setCounter(0);
+    }
+  };
+
+  // SET COUNTER - END
+
 
   useEffect(() => {
     function resetMode() {
@@ -81,6 +111,13 @@ function App() {
       ) {
         audio.play();
         swal("Time out!", "", "success");
+      }
+      if (
+        secondsLeftRef.current === 0 &&
+        localStorage.getItem("isPausedRef") === "false" &&
+        autoSet === false
+      ) {
+        add();
       }
     }
 
@@ -108,9 +145,9 @@ function App() {
       if (localStorage.getItem("isPausedRef") === "false") {
         console.log("tick");
         tick();
-         if (secondsLeftRef.current === 0) {
-           return resetMode();
-         }
+        if (secondsLeftRef.current === 0) {
+          return resetMode();
+        }
       }
     }, 1000);
 
@@ -264,6 +301,12 @@ function App() {
                 button4M30S={button4M30S}
                 button5M={button5M}
                 isPaused={isPaused}
+                counter={counter}
+                setCounter={setCounter}
+                add={add}
+                less={less}
+                autoSet={autoSet}
+                setAutoSet={setAutoSet}
                 isPausedStorage={localStorage.getItem("isPaused")}
                 isPausedRef={localStorage.getItem("isPausedRef")}
                 isPausedRefCurrent={isPausedRef.current}

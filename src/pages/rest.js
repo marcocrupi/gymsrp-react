@@ -64,7 +64,7 @@ function Rest(props) {
   return (
     <div className="rest__container">
       <div className="rest__components">
-        <div className="global__title">REST</div>
+        <div className="global__title">REST & SET</div>
 
         <div className="rest__circularandbuttons">
           <div className="rest__circularprogressbar">
@@ -101,7 +101,28 @@ function Rest(props) {
             />
           </div>
         </div>
-        <SetComponent />
+        <SetComponent
+          secondsLeftRef={props.secondsLeftRef}
+          counter={props.counter}
+          setCounter={props.setCounter}
+          add={props.add}
+          less={props.less}
+        />
+        {props.autoSet === false ? (
+          <button
+            className="rest__auto__set btn btn-warning btn-lg shadow-none"
+            onClick={() => props.setAutoSet(!props.autoSet)}
+          >
+            Auto SET: <span className="rest__auto__set__ONOFF">OFF</span>
+          </button>
+        ) : (
+          <button
+            className="rest__auto__set btn btn-warning btn-lg shadow-none"
+            onClick={() => props.setAutoSet(!props.autoSet)}
+          >
+            Auto SET: <span className="rest__auto__set__ONOFF">ON</span>
+          </button>
+        )}
 
         <div className="container__label">
           <label className="settings__label">
