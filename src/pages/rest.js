@@ -98,9 +98,7 @@ function Rest(props) {
             ) : (
               <PauseButton onClick={props.pauseButton} />
             )}
-            <div onClick={handleClickAudio} className="rest__mute__control">
-              {buttonText}
-            </div>
+
             <ResetButton
               onClick={props.resetButton}
               style={
@@ -109,6 +107,9 @@ function Rest(props) {
                   : { display: "inline-block" }
               }
             />
+            <div onClick={handleClickAudio} className="rest__mute__control">
+              {buttonText}
+            </div>
           </div>
         </div>
         <SetComponent
