@@ -44,7 +44,7 @@ function SetComponent() {
           setCounter(0);
         }}
       >
-        X
+        <ion-icon color="danger" name="trash-outline"></ion-icon>
       </div>
     </div>
   );
