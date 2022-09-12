@@ -124,14 +124,14 @@ function Rest(props) {
             className="rest__auto__set btn btn-warning btn-lg shadow-none"
             onClick={() => props.setAutoSet(!props.autoSet)}
           >
-            Auto SET: <span className="rest__auto__set__ONOFF">OFF</span>
+            Auto SET: <span className="rest__auto__set__ONOFF">✔</span>
           </button>
         ) : (
           <button
             className="rest__auto__set btn btn-warning btn-lg shadow-none"
             onClick={() => props.setAutoSet(!props.autoSet)}
           >
-            Auto SET: <span className="rest__auto__set__ONOFF">ON</span>
+            Auto SET: <span className="rest__auto__set__ONOFF">✖</span>
           </button>
         )}
 
