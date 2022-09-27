@@ -162,6 +162,43 @@ function App() {
 
   // COUNTDOWN - START
 
+  // VARIABLES AND CALCULATIONS FOR THE TIMER DISPLAYED ON THE SCREEN - START
+  // Look at the "CircularProgressbar" on the rest.js page
+
+  const totalSeconds = workMinutes * 60 + workSeconds;
+  localStorage.setItem("totalSeconds", totalSeconds);
+  const percentage = Math.round((secondsLeft / totalSeconds) * 100);
+  const minutes = Math.floor(secondsLeft / 60);
+  let seconds = secondsLeft % 60;
+  if (seconds < 10) seconds = "0" + seconds;
+
+  // VARIABLES AND CALCULATIONS FOR THE TIMER DISPLAYED ON THE SCREEN - END
+
+  // TIMER CONTROLS - START
+
+  function pauseButton() {
+    setIsPaused(true);
+    isPausedRef.current = true;
+    console.log("pause button");
+  }
+
+  function playButton() {
+    setIsPaused(false);
+    isPausedRef.current = false;
+    console.log("play button");
+  }
+
+  function resetButton() {
+    setWorkMinutes(0);
+    setWorkSeconds(0);
+    setSecondsLeft(0);
+    isPausedRef.current = true;
+    secondsLeftRef.current = 0;
+    setIsPaused(true);
+  }
+
+  // TIMER CONTROLS - END
+
   // FUNCTION FOR PRESET TIMER - START
 
   function plusMinutes() {
@@ -243,39 +280,6 @@ function App() {
   }
 
   // FUNCTION FOR PRESET TIMER - START
-
-  // VARIABLES AND CALCULATIONS FOR THE TIMER DISPLAYED ON THE SCREEN - START
-  // Look at the "CircularProgressbar" on the rest.js page
-
-  const totalSeconds = workMinutes * 60 + workSeconds;
-  localStorage.setItem("totalSeconds", totalSeconds);
-  const percentage = Math.round((secondsLeft / totalSeconds) * 100);
-  const minutes = Math.floor(secondsLeft / 60);
-  let seconds = secondsLeft % 60;
-  if (seconds < 10) seconds = "0" + seconds;
-
-  // VARIABLES AND CALCULATIONS FOR THE TIMER DISPLAYED ON THE SCREEN - END
-
-  function pauseButton() {
-    setIsPaused(true);
-    isPausedRef.current = true;
-    console.log("pause button");
-  }
-
-  function playButton() {
-    setIsPaused(false);
-    isPausedRef.current = false;
-    console.log("play button");
-  }
-
-  function resetButton() {
-    setWorkMinutes(0);
-    setWorkSeconds(0);
-    setSecondsLeft(0);
-    isPausedRef.current = true;
-    secondsLeftRef.current = 0;
-    setIsPaused(true);
-  }
 
   return (
     <BrowserRouter>
