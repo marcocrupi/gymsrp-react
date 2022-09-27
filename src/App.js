@@ -1,26 +1,15 @@
 import React from "react";
-
-// React Hook
 import { useState, useEffect, useRef } from "react";
-
-// React router
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SharedLayout from "./pages/sharedlayout";
-
-// SweetAlert makes popup messages easy and pretty: https://sweetalert.js.org/
 import swal from "sweetalert";
-
-// Pages
 import Rest from "./pages/rest";
 import Percentage from "./pages/percentage";
 import Rm from "./pages/rm";
 import Contact from "./pages/contact";
 import Bmi from "./pages/bmi";
 
-// Audio
 import Beep from "./sounds/compress-audio-alarm.mp3";
-
-// Bootstrap library
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -160,7 +149,7 @@ function App() {
     return () => clearInterval(interval);
   }, [workMinutes, workSeconds, audio, autoSet]);
 
-  // COUNTDOWN - START
+  // COUNTDOWN - END
 
   // VARIABLES AND CALCULATIONS FOR THE TIMER DISPLAYED ON THE SCREEN - START
   // Look at the "CircularProgressbar" on the rest.js page
