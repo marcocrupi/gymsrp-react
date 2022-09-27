@@ -60,7 +60,6 @@ function App() {
   );
 
   const [autoSet, setAutoSet] = useState(false);
-  console.log(autoSet);
 
   localStorage.setItem("counter", counter);
 
@@ -127,9 +126,9 @@ function App() {
 
     const interval = setInterval(() => {
       if (localStorage.getItem("isPausedRef") === "true") {
-        console.log("stop", isPausedRef.current);
+        // console.log("stop", isPausedRef.current);
         if (secondsLeftRef.current === 0) {
-          console.log("clear interval");
+          // console.log("clear interval");
           clearInterval(interval);
         }
       }
@@ -137,7 +136,7 @@ function App() {
         return resetMode();
       }
       if (localStorage.getItem("isPausedRef") === "false") {
-        console.log("countdown");
+        // console.log("countdown");
         secondsLeftRef.current--;
         setSecondsLeft(secondsLeftRef.current);
         if (secondsLeftRef.current === 0) {
@@ -168,13 +167,13 @@ function App() {
   function pauseButton() {
     setIsPaused(true);
     isPausedRef.current = true;
-    console.log("pause button");
+    // console.log("pause button");
   }
 
   function playButton() {
     setIsPaused(false);
     isPausedRef.current = false;
-    console.log("play button");
+    // console.log("play button");
   }
 
   function resetButton() {
