@@ -88,6 +88,8 @@ function App() {
 
   // SET COUNTER - END
 
+  // COUNTDOWN - START
+
   useEffect(() => {
     function resetMode() {
       setWorkMinutes(0);
@@ -123,6 +125,7 @@ function App() {
         add();
       }
     }
+
     secondsLeftRef.current = workMinutes * 60 + workSeconds;
 
     setSecondsLeft(
@@ -156,6 +159,10 @@ function App() {
 
     return () => clearInterval(interval);
   }, [workMinutes, workSeconds, audio, autoSet]);
+
+  // COUNTDOWN - START
+
+  // FUNCTION FOR PRESET TIMER - START
 
   function plusMinutes() {
     setWorkMinutes(workMinutes + 1);
@@ -235,18 +242,19 @@ function App() {
     setWorkSeconds(0);
   }
 
+  // FUNCTION FOR PRESET TIMER - START
+
+  // VARIABLES AND CALCULATIONS FOR THE TIMER DISPLAYED ON THE SCREEN - START
+  // Look at the "CircularProgressbar" on the rest.js page
+
   const totalSeconds = workMinutes * 60 + workSeconds;
-  const percentage = Math.round((secondsLeft / totalSeconds) * 100);
-
-  // LOCAL STORAGE - START
-
   localStorage.setItem("totalSeconds", totalSeconds);
-
-  // LOCAL STORAGE - END
-
+  const percentage = Math.round((secondsLeft / totalSeconds) * 100);
   const minutes = Math.floor(secondsLeft / 60);
   let seconds = secondsLeft % 60;
   if (seconds < 10) seconds = "0" + seconds;
+
+  // VARIABLES AND CALCULATIONS FOR THE TIMER DISPLAYED ON THE SCREEN - END
 
   function pauseButton() {
     setIsPaused(true);

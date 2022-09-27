@@ -76,7 +76,7 @@ function Rest(props) {
         <div className="rest__circularandbuttons">
           <div className="rest__circularprogressbar">
             <CircularProgressbar
-              value={props.secondsLeftRef === 0 ? 0 : props.percentage}
+              value={props.secondsLeftRef === 0 ? 100 : props.percentage}
               text={props.minutes + ":" + props.seconds}
               background
               backgroundPadding={4}
