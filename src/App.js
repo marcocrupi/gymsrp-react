@@ -39,9 +39,6 @@ function App() {
       : parseInt(localStorage.getItem("SettingsInfoWorkSeconds"))
   );
 
-  localStorage.setItem("SettingsInfoWorkMinutes", workMinutes);
-  localStorage.setItem("SettingsInfoWorkSeconds", workSeconds);
-
   const [isPaused, setIsPaused] = useState(
     localStorage.getItem("isPausedRef") === null
       ? true
@@ -57,29 +54,15 @@ function App() {
   const secondsLeftRef = useRef(secondsLeft);
   const isPausedRef = useRef(isPaused);
 
-  // CONSOLE LOG - START
-
-  // console.log("isPaused", isPaused);
-  // console.log("secondsLeft", secondsLeftRef.current);
-  // console.log("secondsLeftRef", secondsLeftRef);
-  // console.log("isPausedRef", isPausedRef);
-
-  // CONSOLE LOG - END
-
   // LOCAL STORAGE SET ITEM - START
 
+  localStorage.setItem("SettingsInfoWorkMinutes", workMinutes);
+  localStorage.setItem("SettingsInfoWorkSeconds", workSeconds);
   localStorage.setItem("isPaused", isPaused);
   localStorage.setItem("isPausedRef", isPausedRef.current);
   localStorage.setItem("secondsLeftRef", secondsLeftRef.current);
 
   // LOCAL STORAGE SET ITEM - END
-
-  function tick() {
-    console.log("tick", isPausedRef.current);
-    secondsLeftRef.current--;
-    setSecondsLeft(secondsLeftRef.current);
-    console.log("secondsLeft", secondsLeftRef.current);
-  }
 
   // SET COUNTER - START
 
@@ -140,7 +123,6 @@ function App() {
         add();
       }
     }
-
     secondsLeftRef.current = workMinutes * 60 + workSeconds;
 
     setSecondsLeft(
@@ -163,8 +145,9 @@ function App() {
         return resetMode();
       }
       if (localStorage.getItem("isPausedRef") === "false") {
-        console.log("tick");
-        tick();
+        console.log("countdown");
+        secondsLeftRef.current--;
+        setSecondsLeft(secondsLeftRef.current);
         if (secondsLeftRef.current === 0) {
           return resetMode();
         }
