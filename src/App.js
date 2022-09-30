@@ -14,7 +14,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [audio] = useState(new Audio(Beep));
-  
+
   const [workMinutes, setWorkMinutes] = useState(
     isNaN(parseInt(localStorage.getItem("SettingsInfoWorkMinutes")))
       ? 0
@@ -56,6 +56,7 @@ function App() {
   const [counter, setCounter] = useState(
     parseInt(localStorage.getItem("counter"))
   );
+  audio.loop = true;
 
   const [autoSet, setAutoSet] = useState(false);
 
