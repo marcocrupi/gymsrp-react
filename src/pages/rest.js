@@ -18,13 +18,10 @@ function Rest(props) {
 
   localStorage.setItem("newButton", JSON.stringify(newButton));
 
-  const deleteButton = (index) => {
-    const removeList = [...newButton];
-    removeList.splice(index, 1);
-    setNewButton(removeList);
-  };
+  // TIMER CUSTOM PRESET - START
 
   const addButton = () => {
+    // Saving the current timer values in the new button
     const timerScreen = props.minutes + ":" + props.seconds;
     const realMinutes = props.workMinutes;
     const realSeconds = props.workSeconds;
@@ -37,6 +34,7 @@ function Rest(props) {
       },
     ];
 
+    // Prevents buttons with the same values from being saved
     let uniqueArray = newItems.filter((value, index) => {
       const _value = JSON.stringify(value);
       return (
@@ -47,6 +45,7 @@ function Rest(props) {
       );
     });
 
+    // Prevents buttons from being saved with the value set to 0
     uniqueArray = uniqueArray.filter(function (obj) {
       return obj.button !== "0:00";
     });
@@ -54,13 +53,22 @@ function Rest(props) {
     setNewButton(uniqueArray);
   };
 
+  const deleteButton = (index) => {
+    const removeList = [...newButton];
+    removeList.splice(index, 1);
+    setNewButton(removeList);
+  };
+
+  // Set the timer with the values saved after clicking on the button
   const handleClick = (e, index) => {
     let valueMinutes = newButton[index].realminutes;
     let valueSeconds = newButton[index].realseconds;
     props.setWorkMinutes(valueMinutes);
     props.setWorkSeconds(valueSeconds);
   };
- 
+
+  // TIMER CUSTOM PRESET - END
+
   const [buttonText, setButtonText] = useState("🔊");
 
   function handleClickAudio() {

@@ -186,7 +186,7 @@ function App() {
 
   // TIMER CONTROLS - END
 
-  // FUNCTION FOR PRESET TIMER - START
+  // SET SIDE BUTTON +/- SLIDER - START
 
   function plusMinutes() {
     setWorkMinutes(workMinutes + 1);
@@ -213,6 +213,10 @@ function App() {
       setWorkSeconds(0);
     }
   }
+
+  // SET SIDE BUTTON +/- SLIDER - END
+
+  // FUNCTION FOR PRESET TIMER - START
 
   function button30S() {
     setWorkSeconds(30);
@@ -266,7 +270,7 @@ function App() {
     setWorkSeconds(0);
   }
 
-  // FUNCTION FOR PRESET TIMER - START
+  // FUNCTION FOR PRESET TIMER - END
 
   return (
     <BrowserRouter>
