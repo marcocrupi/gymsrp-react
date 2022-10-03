@@ -68,10 +68,14 @@ function App() {
     );
   }
 
+  // DETECT IOS DEVICE - END
+
+  // AUDIO AUTOPLAY REQUIRED ONLY FOR IOS - START
+
   audio.autoplay =
     iOS() === true && isPausedRef.current === true ? true : false;
 
-  // DETECT IOS DEVICE - END
+  // AUDIO AUTOPLAY REQUIRED ONLY FOR IOS - END
 
   // SET COUNTER - START
 
