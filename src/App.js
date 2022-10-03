@@ -68,15 +68,12 @@ function App() {
     );
   }
 
-audio.autoplay = iOS() === true ? true : false;
-
-  if (
+  audio.autoplay =
     iOS() === true &&
     secondsLeftRef.current === 0 &&
     localStorage.getItem("isPausedRef") === "false"
-  ) {
-    audio.autoplay = true;
-  }
+      ? true
+      : false;
 
   // DETECT IOS DEVICE - END
 
