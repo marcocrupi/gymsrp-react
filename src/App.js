@@ -51,16 +51,34 @@ function App() {
 
   // LOCAL STORAGE SET ITEM - END
 
-  // FOR IOS DEVICE - START
+  // DETECT IOS DEVICE - START
+
+  function iOS() {
+    return (
+      [
+        "iPad Simulator",
+        "iPhone Simulator",
+        "iPod Simulator",
+        "iPad",
+        "iPhone",
+        "iPod",
+      ].includes(navigator.platform) ||
+      // iPad on iOS 13 detection
+      (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+    );
+  }
+
+audio.autoplay = iOS() === true ? true : false;
 
   if (
+    iOS() === true &&
     secondsLeftRef.current === 0 &&
     localStorage.getItem("isPausedRef") === "false"
   ) {
     audio.autoplay = true;
   }
 
-  // FOR IOS DEVICE - END
+  // DETECT IOS DEVICE - END
 
   // SET COUNTER - START
 
