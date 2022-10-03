@@ -68,8 +68,6 @@ function App() {
     );
   }
 
-  console.log(isPausedRef.current);
-
   audio.autoplay =
     iOS() === true && isPausedRef.current === true ? true : false;
 
