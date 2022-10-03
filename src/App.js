@@ -89,6 +89,7 @@ function App() {
         secondsLeftRef.current === 0 &&
         localStorage.getItem("isPausedRef") === "false"
       ) {
+        audio.autoplay = true;
         audio.play();
         swal("Time out!", "", "success", {
           buttons: {
