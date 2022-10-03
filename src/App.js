@@ -51,6 +51,35 @@ function App() {
 
   // LOCAL STORAGE SET ITEM - END
 
+  // DETECT IOS DEVICE - START
+
+  function iOS() {
+    return (
+      [
+        "iPad Simulator",
+        "iPhone Simulator",
+        "iPod Simulator",
+        "iPad",
+        "iPhone",
+        "iPod",
+      ].includes(navigator.platform) ||
+      // iPad on iOS 13 detection
+      (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+    );
+  }
+
+  console.log(iOS());
+
+  if (
+    iOS() === true &&
+    secondsLeftRef.current === 0 &&
+    localStorage.getItem("isPausedRef") === "false"
+  ) {
+    audio.autoplay = true;
+  }
+
+  // DETECT IOS DEVICE - END
+
   // SET COUNTER - START
 
   const [counter, setCounter] = useState(
@@ -89,7 +118,6 @@ function App() {
         secondsLeftRef.current === 0 &&
         localStorage.getItem("isPausedRef") === "false"
       ) {
-        audio.autoplay = true;
         audio.play();
         swal("Time out!", "", "success", {
           buttons: {
