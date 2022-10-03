@@ -68,12 +68,10 @@ function App() {
     );
   }
 
+  console.log(isPausedRef.current);
+
   audio.autoplay =
-    iOS() === true &&
-    secondsLeftRef.current === 0 &&
-    localStorage.getItem("isPausedRef") === "false"
-      ? true
-      : false;
+    iOS() === true && isPausedRef.current === true ? true : false;
 
   // DETECT IOS DEVICE - END
 
